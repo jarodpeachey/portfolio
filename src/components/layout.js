@@ -64,15 +64,15 @@ library.add(
   faAward,
   faBolt,
   faPencilRuler,
-  faEnvelope
+  faEnvelope,
 );
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
       <Header fixed color="transparent">
-        <Heading type="h1" className="m-none">
-          <FontAwesomeIcon icon="user" />
+        <Heading type="h1" customStyles={{fontSize: 54}} className="m-none ml-2">
+          JP
         </Heading>
         <Mobile>
           <MobileMenu>

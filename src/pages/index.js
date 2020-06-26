@@ -131,14 +131,14 @@ const App = ({}) => {
             id="projects"
             icon="flask"
             style={{
-              color: `${theme.color.primary}20`,
+              color: `${theme.color.secondary}20`,
               fontSize: 280,
               position: 'absolute',
               left: -60,
               top: -100,
             }}
           />
-          <Heading display="title" type="h6" color="primary">
+          <Heading display="title" type="h6" color="secondary">
             Projects
           </Heading>
           <Heading className="mt-3" type="h2">
@@ -149,7 +149,7 @@ const App = ({}) => {
             SPA's, fully-custom APIs, and database integrations to small
             business websites, landing pages and blogs.
           </Paragraph>
-          <Row spacing={[24]} breakpoints={[769, 960]}>
+          <Row spacing={[24]} breakpoints={[769, 1100]}>
             <div widths={[6, 4]}>
               <Info
                 color="primary"
@@ -159,10 +159,10 @@ const App = ({}) => {
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
-                    <Chip color="rgb(65, 90, 153)" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       React
                     </Chip>
-                    <Chip color="rgb(65, 90, 153)">HTML/CSS</Chip>
+                    <Chip color="primary">HTML/CSS</Chip>
                   </Flex>
                 </div>
                 <div className="p-4 pt-none">
@@ -197,7 +197,7 @@ const App = ({}) => {
                     external
                     link="https://wevote.us"
                     // variant="outlined"
-                    color="rgb(65, 90, 153)"
+                    color="primary"
                     customStyles={`
                       // background: none !important;
                       // padding-left: 0 !important;
@@ -217,13 +217,13 @@ const App = ({}) => {
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
-                    <Chip color="rgb(23, 88, 209)" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       React
                     </Chip>
-                    <Chip color="rgb(23, 88, 209)" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       Gatsby
                     </Chip>
-                    <Chip color="rgb(23, 88, 209)">JAMstack</Chip>
+                    <Chip color="primary">JAMstack</Chip>
                   </Flex>
                 </div>
                 <div className="p-4 pt-none">
@@ -260,7 +260,7 @@ const App = ({}) => {
                     external
                     link="https://staticbox.io"
                     // variant="outlined"
-                    color="rgb(23, 88, 209)"
+                    color="primary"
                     customStyles={`
                       // background: none !important;
                       // padding-left: 0 !important;
@@ -280,13 +280,13 @@ const App = ({}) => {
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
-                    <Chip color="#b4267c" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       React
                     </Chip>
-                    <Chip color="#b4267c" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       Gatsby
                     </Chip>
-                    <Chip color="#b4267c">JAMstack</Chip>
+                    <Chip color="primary">JAMstack</Chip>
                   </Flex>
                 </div>
                 <div className="p-4 pt-none">
@@ -297,32 +297,31 @@ const App = ({}) => {
                         customStyles={`color: ${theme.color.gray.one};`}
                         className="m-none"
                       >
-                        Staticbox
+                        Jelly Development
                       </Heading>
-                      <Text type="span">Founder + Developer</Text>
+                      <Text type="span">Designer + Developer</Text>
                     </>
                     <>
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        Staticbox is a commenting system for static websites. It
-                        allows users to create fully custom comment forms and
-                        displays.
+                        I built the website for my web development agency, Jelly
+                        Development. I used a clean, modern design with a simple
+                        font and colors.
                       </Paragraph>
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        It leverages GraphQL and Apollo to load comments at
-                        build time. The result is a commenting system that
-                        doesn't add any page bloat!
+                        I used Gatsby to generate the HTML from React, and
+                        deployed the site to Netlify.
                       </Paragraph>
                     </>
                   </Collapse>
                   <Button
                     external
-                    link="https://staticbox.io"
+                    link="https://jellydevelopment.com"
                     // variant="outlined"
-                    color="#b4267c"
+                    color="primary"
                     customStyles={`
                       // background: none !important;
                       // padding-left: 0 !important;
@@ -342,13 +341,13 @@ const App = ({}) => {
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
-                    <Chip color="rgb(135, 49, 213)" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       React
                     </Chip>
-                    <Chip color="rgb(135, 49, 213)" className="mr-2">
+                    <Chip color="primary" className="mr-2">
                       Gatsby
                     </Chip>
-                    <Chip color="rgb(135, 49, 213)">JAMstack</Chip>
+                    <Chip color="primary">JAMstack</Chip>
                   </Flex>
                 </div>
                 <div className="p-4 pt-none">
@@ -386,7 +385,7 @@ const App = ({}) => {
                     external
                     link="https://system-ui-kit.netlify.app"
                     // variant="outlined"
-                    color="rgb(135, 49, 213)"
+                    color="primary"
                     customStyles={`
                       // background: none !important;
                       // padding-left: 0 !important;
@@ -406,14 +405,14 @@ const App = ({}) => {
             id="values"
             icon="award"
             style={{
-              color: `${theme.color.secondary}20`,
+              color: `${theme.color.primary}20`,
               fontSize: 280,
               position: 'absolute',
               right: 0,
               top: -100,
             }}
           />
-          <Heading display="title" type="h6" color="secondary">
+          <Heading display="title" type="h6" color="primary">
             Values
           </Heading>
           <Heading className="mt-3" type="h2">

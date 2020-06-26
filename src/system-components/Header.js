@@ -152,12 +152,7 @@ const Wrapper = styled.div`
           ? props.theme.color.gray.one
           : props.theme.color.gray.one};
     }
-    span {
-      background: ${(props) =>
-        props.color === 'primary' || props.color === 'secondary'
-          ? 'white'
-          : props.theme.color.gray.nine} !important;
-    }
+
   }
   &.open {
     h1,

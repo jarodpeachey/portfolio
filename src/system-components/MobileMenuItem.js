@@ -62,7 +62,8 @@ const Wrapper = styled.div`
       border-radius: ${props.theme.radius.two};
       transition-duration: 0.15s !important;
       :hover {
-        background: #00000010;
+        background: ${props.theme.color.gray.two} !important;
+        color: ${props.theme.color.gray.nine} !important;
       }
       svg {
         color: ${props.theme.color.gray.nine} !important;
@@ -81,7 +82,9 @@ const Wrapper = styled.div`
     border-radius: ${(props) => props.theme.radius.two};
     transition-duration: 0.15s !important;
     :hover {
-      background: ${(props) => (props.submenu ? 'transparent' : '#00000010')};
+      background: ${(props) =>
+        props.submenu ? 'transparent' : props.theme.color.gray.two};
+      color: ${(props) => props.theme.color.gray.nine} !important;
     }
   }
 `;

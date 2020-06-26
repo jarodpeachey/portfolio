@@ -40,7 +40,8 @@ const Info = ({
 
 const ImageWrapper = styled.div`
   max-height: 200px;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: visible;
   img {
     object-fit: cover;
     width: 100%;
@@ -58,8 +59,7 @@ const StyledInfo = styled.div`
       align-items: flex-start;
     `};
   img {
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;
+    border-radius: 6px;
   }
 
   ${(props) =>
