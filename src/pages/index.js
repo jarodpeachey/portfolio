@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import WeVoteImageTwo from 'images/wevote_two.png';
-import StaticboxImage from 'images/staticbox.png';
-import JellyImage from 'images/jelly-development.png';
-import SystemImage from 'images/system.png';
+import WeVoteImageTwo from '../images/wevote_two.jpg';
+import StaticboxImage from '../images/staticbox.jpg';
+import JellyImage from '../images/jelly-development.jpg';
+import SystemImage from '../images/system.jpg';
 import { theme } from '../components/theme';
 import Hero from '../system-components/Hero';
 import Section from '../system-components/Section';
