@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import WeVoteImageTwo from 'images/wevote_two.png';
+import StaticboxImage from 'images/staticbox.png';
+import JellyImage from 'images/jelly-development.png';
+import SystemImage from 'images/system.png';
 import { theme } from '../components/theme';
 import Hero from '../system-components/Hero';
 import Section from '../system-components/Section';
@@ -20,11 +24,6 @@ import Input from '../system-components/Input';
 import Flex from '../system-components/Flex';
 import Collapse from '../system-components/Collapse';
 import Text from '../system-components/Text';
-
-import WeVoteImageTwo from '../images/wevote_two.png';
-import StaticboxImage from '../images/staticbox.png';
-import JellyImage from '../images/jelly-development.png';
-import SystemImage from '../images/system.png';
 
 const App = ({}) => {
   console.log(WeVoteImageTwo);
@@ -71,7 +70,7 @@ const App = ({}) => {
         </Flex>
       </Hero>
       <Section spacing="large">
-        <Container customStyles={`position: relative;`}>
+        <Container customStyles="position: relative;">
           <FontAwesomeIcon
             id="projects"
             icon="flask"
@@ -89,7 +88,7 @@ const App = ({}) => {
           <Heading className="mt-3" type="h2">
             Recent Projects + Websites
           </Heading>
-          <Paragraph customStyles={`max-width: 769px;`}>
+          <Paragraph customStyles="max-width: 769px;">
             I've worked on all kinds of projects and sites, from large-scale
             SPA's, fully-custom APIs, and database integrations to small
             business websites, landing pages and blogs.
@@ -346,7 +345,7 @@ const App = ({}) => {
         </Container>
       </Section>
       <Section spacing="large">
-        <Container customStyles={`position: relative;`}>
+        <Container customStyles="position: relative;">
           <FontAwesomeIcon
             id="values"
             icon="award"
@@ -364,7 +363,7 @@ const App = ({}) => {
           <Heading className="mt-3" type="h2">
             Highest Quality Standards
           </Heading>
-          <Paragraph customStyles={`max-width: 769px;`}>
+          <Paragraph customStyles="max-width: 769px;">
             When I develop websites and applications, I don't cut corners. To
             paraphrase a popular quote: "A website is only as good as it's worst
             part". understand that
