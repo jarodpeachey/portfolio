@@ -86,7 +86,7 @@ const App = ({}) => {
   return (
     <Layout>
       <Helmet>
-        <title>System - React UI Kit</title>
+        <title>Jarod Peachey - Front End Web Developer</title>
       </Helmet>
       <Hero
         background={`linear-gradient(
