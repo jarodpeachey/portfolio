@@ -25,6 +25,7 @@ import {
   faFlask,
   faAward,
   faPencilRuler,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import NavbarItem from '../system-components/NavbarItem';
 import SubMenuItem from '../system-components/SubMenuItem';
@@ -63,6 +64,7 @@ library.add(
   faAward,
   faBolt,
   faPencilRuler,
+  faEnvelope
 );
 
 const Layout = ({ children }) => (
