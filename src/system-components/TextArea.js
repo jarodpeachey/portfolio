@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from '../components/theme';
 import { pSBC } from '../utils/color';
 
-const Input = ({
+const TextArea = ({
   className = '',
   placeholder = '',
   onChange = null,
@@ -70,7 +70,7 @@ const Input = ({
       )}
       {icon && (
         <>
-          <StyledInput
+          <StyledTextArea
             color={color}
             unselectable="on"
             fullWidth={fullWidth}
@@ -104,7 +104,7 @@ const Input = ({
       )}
       {!icon && (
         <>
-          <StyledInput
+          <StyledTextArea
             color={color}
             unselectable="on"
             hover={hover}
@@ -238,7 +238,7 @@ const Label = styled.label`
       : ''} !important;
 `;
 
-const StyledInput = styled.input`
+const StyledTextArea = styled.textarea`
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
@@ -247,8 +247,11 @@ const StyledInput = styled.input`
   ::placeholder {
     color: ${(props) => props.theme.color.gray.five};
   }
-  color: ${(props) => props.theme.color.gray.eight};
-  /* Rules below not implemented in browsers yet */
+  min-height: 150px;
+  resize: vertical;
+color: ${(props) =>
+  props.theme.color.gray
+    .eight};  /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
   display: inline-block;
@@ -304,4 +307,4 @@ box-shadow: 2px 4px 32px -14px ${(props) => props.theme.color.gray.four};  }
   }
 `;
 
-export default Input;
+export default TextArea;

@@ -167,7 +167,7 @@ const StyledButton = styled.button`
           ? props.theme.color.success
           : props.color === 'error'
           ? props.theme.color.error
-          : props.theme.color.gray.one}15;
+          : props.theme.color.gray.one}18;
         box-shadow: none;
       }
     `};

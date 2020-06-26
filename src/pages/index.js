@@ -24,9 +24,65 @@ import Input from '../system-components/Input';
 import Flex from '../system-components/Flex';
 import Collapse from '../system-components/Collapse';
 import Text from '../system-components/Text';
+import TextArea from '../system-components/TextArea';
 
 const App = ({}) => {
-  console.log(WeVoteImageTwo);
+  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [messageError, setMessageError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  const onEmailInputChange = (e) => {
+    setEmail(e.target.value);
+
+    const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+    if (regex.test(e.target.value)) {
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+  };
+
+  const onNameInputChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const onMessageInputChange = (e) => {
+    setMessage(e.target.value);
+
+    setMessageError(false);
+  };
+
+  const onSubmit = (e) => {
+    console.log(name);
+    console.log(message);
+    e.preventDefault();
+    let body = '';
+    let subject = '';
+
+    if (message && email) {
+      console.log('No name');
+      body = `
+        ${message}
+      `;
+
+      subject = `Message from ${name || 'website'}`;
+
+      if (typeof window !== 'undefined') {
+        window.location.href = `mailto:jwpeachey107@aol.com?subject=${subject}&body=${body}`;
+      }
+    } else {
+      if (message === '') {
+        setMessageError(true);
+      }
+      if (email === '') {
+        setEmailError(true);
+      }
+    }
+  };
+
   return (
     <Layout>
       <Helmet>
@@ -61,10 +117,10 @@ const App = ({}) => {
           easy to maintain.
         </Paragraph>
         <Flex hAlign="start">
-          <Button className="mr-2" color="primary">
+          <Button className="mr-2" color="primary" link="#contact">
             Contact Me
           </Button>
-          <Button color="primary" variant="plain">
+          <Button color="primary" variant="plain" link="#projects">
             View My Work
           </Button>
         </Flex>
@@ -353,7 +409,7 @@ const App = ({}) => {
               color: `${theme.color.secondary}20`,
               fontSize: 280,
               position: 'absolute',
-              left: -60,
+              right: -60,
               top: -100,
             }}
           />
@@ -431,6 +487,69 @@ const App = ({}) => {
                   with today's standards.
                 </Paragraph>
               </Info>
+            </div>
+          </Row>
+        </Container>
+      </Section>
+      <Section spacing="large">
+        <Container customStyles="position: relative;">
+          <FontAwesomeIcon
+            id="contact"
+            icon="envelope"
+            style={{
+              color: `${theme.color.secondary}20`,
+              fontSize: 280,
+              position: 'absolute',
+              left: -60,
+              top: -100,
+            }}
+          />
+          <Heading display="title" type="h6" color="secondary">
+            Contact Me
+          </Heading>
+          <Heading className="mt-3" type="h2">
+            Get In Touch!
+          </Heading>
+          <Paragraph customStyles="max-width: 769px;">
+            If you've got any questions, or have a website you'd like built, let
+            me know! I'll do my best to respond withing 24 hours.
+          </Paragraph>
+          {emailError && (
+            <Alert color="error">Please enter a valid email.</Alert>
+          )}
+          {messageError && !emailError && (
+            <Alert color="error">Please type a message.</Alert>
+          )}
+          <Row spacing={[12]} breakpoints={[769]}>
+            <div widths={[6]}>
+              <Input
+                onChange={onNameInputChange}
+                fullWidth
+                size="large"
+                placeholder="Name"
+              />
+            </div>
+            <div widths={[6]}>
+              <Input
+                onChange={onEmailInputChange}
+                fullWidth
+                size="large"
+                type="email"
+                placeholder="Email"
+              />
+            </div>
+            <div widths={[12]}>
+              <TextArea
+                onChange={onMessageInputChange}
+                fullWidth
+                size="large"
+                placeholder="Message"
+              />
+            </div>
+            <div widths={[12]}>
+              <Button color="secondary" onClick={onSubmit}>
+                Submit
+              </Button>
             </div>
           </Row>
         </Container>

@@ -57,7 +57,7 @@ export const theme = {
       // dark: '#363648',
       // light: '#d1d1d5',
 
-      'one': '#fff',
+      'one': '#ffffff',
       'two': '#ecf0f3',
       'three': '#dde0e6',
       'four': '#b3b8c3',
