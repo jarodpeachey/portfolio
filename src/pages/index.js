@@ -409,7 +409,7 @@ const App = ({}) => {
               color: `${theme.color.secondary}20`,
               fontSize: 280,
               position: 'absolute',
-              right: -60,
+              right: 0,
               top: -100,
             }}
           />
