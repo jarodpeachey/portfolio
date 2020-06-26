@@ -87,6 +87,10 @@ const App = ({}) => {
     <Layout>
       <Helmet>
         <title>Jarod Peachey - Front End Web Developer</title>
+        <meta
+          name="description"
+          content="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML, CSS and the JAMstack."
+        />
       </Helmet>
       <Hero
         background={`linear-gradient(
