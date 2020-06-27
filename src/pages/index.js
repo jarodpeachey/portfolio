@@ -125,7 +125,7 @@ const App = ({}) => {
             Contact Me
           </Button>
           <Button color="primary" variant="plain" link="#projects">
-            View My Work
+            My Work
           </Button>
         </Flex>
       </Hero>
