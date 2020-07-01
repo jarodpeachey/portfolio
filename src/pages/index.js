@@ -425,7 +425,7 @@ const App = ({}) => {
           <Paragraph customStyles="max-width: 769px;">
             When I develop websites and applications, I don't cut corners. To
             paraphrase a popular quote: "A website is only as good as it's worst
-            part". understand that
+            part".
           </Paragraph>
           <Row spacing={[24]} breakpoints={[769, 960]}>
             <div widths={[6, 4]}>
@@ -515,7 +515,7 @@ const App = ({}) => {
           </Heading>
           <Paragraph customStyles="max-width: 769px;">
             If you've got any questions, or have a website you'd like built, let
-            me know! I'll do my best to respond withing 24 hours.
+            me know! I'll do my best to respond within 24 hours.
           </Paragraph>
           {emailError && (
             <Alert color="error">Please enter a valid email.</Alert>
