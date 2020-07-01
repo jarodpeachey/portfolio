@@ -239,18 +239,16 @@ const Label = styled.label`
 `;
 
 const StyledInput = styled.input`
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-  display: inline-block;
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
   // background: ${(props) => props.theme.color.gray.eight};
   ::placeholder {
     color: ${(props) => props.theme.color.gray.five};
   }
   color: ${(props) => props.theme.color.gray.eight};
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none;
   display: inline-block;
   padding: ${(props) =>
     props.size === 'xs'
