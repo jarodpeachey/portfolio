@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MobileSubMenuItem = ({ children }) => (
-  <Wrapper>{children}</Wrapper>
+const MobileSubMenuItem = ({ children, className, id }) => (
+  <Wrapper className={className} id={id}>
+    {children}
+  </Wrapper>
 );
 
 const Wrapper = styled.div`

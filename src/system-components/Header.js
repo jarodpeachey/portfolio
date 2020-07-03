@@ -152,7 +152,6 @@ const Wrapper = styled.div`
           ? props.theme.color.gray.one
           : props.theme.color.gray.one};
     }
-
   }
   &.open {
     h1,
@@ -164,14 +163,10 @@ const Wrapper = styled.div`
     div,
     .menu-item,
     .menu-item a {
-      color: ${(props) =>
-        props.color === 'transparent' ? props.theme.color.gray.nine : null};
+      color: ${(props) => props.theme.color.gray.nine} !important;
     }
     span {
-      background: ${(props) =>
-        props.color === 'transparent'
-          ? props.theme.color.gray.nine
-          : null} !important;
+      background: ${(props) => props.theme.color.gray.nine} !important;
     }
   }
 `;
@@ -185,6 +180,7 @@ const InnerContainer = styled.div`
     props.scrolled || props.color !== 'transparent' ? '10px' : '32px'};
   justify-content: space-between;
   transition: 0.3s;
+  z-index: 999;
 `;
 
 const Close = styled.div`

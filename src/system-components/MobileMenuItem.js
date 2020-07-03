@@ -2,13 +2,29 @@ import React, { useState, useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const MobileMenuItem = ({ children, submenu, align, icon }) => {
+const MobileMenuItem = ({
+  children,
+  className,
+  id,
+  submenu,
+  align,
+  icon,
+  closeFunction,
+}) => {
   const [showMobileSubMenu, setShowMobileSubMenu] = useState(false);
+
+  const customCloseFunction = () => {
+    document.getElementById('header').classList.remove('open');
+    closeFunction();
+  };
+
   return (
     <>
       {submenu ? (
         <>
           <Wrapper
+            className={className}
+            id={id}
             onClick={() => {
               setShowMobileSubMenu(!showMobileSubMenu);
             }}
@@ -37,7 +53,9 @@ const MobileMenuItem = ({ children, submenu, align, icon }) => {
           </MobileSubMenuWrapper>
         </>
       ) : (
-        <Wrapper>{children}</Wrapper>
+        <Wrapper className={className} onClick={customCloseFunction} id={id}>
+          {children}
+        </Wrapper>
       )}
     </>
   );
@@ -53,17 +71,16 @@ const Wrapper = styled.div`
     color: ${(props) => props.theme.color.gray.nine} !important;
     fill: ${(props) => props.theme.color.gray.nine} !important;
   }
-  color: ${(props) => props.theme.color.gray.nine};
+  color: ${(props) => props.theme.color.gray.nine} !important;
   ${(props) =>
     props.submenu &&
     css`
       padding: 12px 16px;
       cursor: pointer;
-      border-radius: ${props.theme.radius.two};
+      border-radius: ${props.theme.radius.one};
       transition-duration: 0.15s !important;
       :hover {
-        background: ${props.theme.color.gray.two} !important;
-        color: ${props.theme.color.gray.nine} !important;
+        background: ${'#435a8e10'};
       }
       svg {
         color: ${props.theme.color.gray.nine} !important;
@@ -75,31 +92,26 @@ const Wrapper = styled.div`
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
+    color: ${(props) => props.theme.color.gray.nine} !important;
     cursor: pointer;
-    color: ${(props) => props.theme.color.gray.nine};
     background: ${(props) =>
-      props.submenu ? 'transparent' : props.open ? '#00000010' : 'transparent'};
-    border-radius: ${(props) => props.theme.radius.two};
+      props.submenu ? 'transparent' : props.open ? '#435a8e10' : 'transparent'};
+    border-radius: ${(props) => props.theme.radius.one};
     transition-duration: 0.15s !important;
     :hover {
-      background: ${(props) =>
-        props.submenu ? 'transparent' : props.theme.color.gray.two};
-      color: ${(props) => props.theme.color.gray.nine} !important;
+      background: ${(props) => (props.submenu ? 'transparent' : '#435a8e10')};
     }
   }
 `;
 
 const MobileSubMenuWrapper = styled.div`
-  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
-  background: ${(props) => (props.open ? 'white' : 'transparent')};
-  opacity: ${(props) => (props.open ? 1 : 0)};
-  top: 0;
-  left: 0;
-  width: 100%;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  -o-transition: all 0.15s;
   transition: all 0.15s;
-  padding: 0;
-  height: ${(props) => (props.open ? 'fit-content' : 0)};
-  z-index: -1;
+  overflow: hidden;
+  max-height: ${(props) => (props.open ? '130px' : '0')} !important;
 `;
 
 export default MobileMenuItem;
