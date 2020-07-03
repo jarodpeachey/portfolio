@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { ThemeProvider } from 'styled-components';
@@ -37,6 +37,7 @@ import MobileSubMenuItem from '../system-components/MobileSubMenuItem';
 import MobileMenuItem from '../system-components/MobileMenuItem';
 import MobileMenu from '../system-components/MobileMenu';
 import MobileSubMenu from '../system-components/MobileSubMenu';
+import MobileMenuToggle from '../system-components/MobileMenuToggle';
 import Header from '../system-components/Header';
 import { theme } from './theme';
 import Heading from '../system-components/Heading';
@@ -67,22 +68,70 @@ library.add(
   faEnvelope,
 );
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Wrapper>
-      <Header fixed color="transparent">
-        <Heading type="h1" customStyles={{fontSize: 54}} className="m-none ml-2">
-          JP
-        </Heading>
-        <Mobile>
-          <MobileMenu>
-            <MobileMenuItem>
+const Layout = ({ children }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Header fixed color="transparent">
+          <Heading
+            type="h1"
+            customStyles={'z-index: 999;'}
+            className="m-none ml-2"
+          >
+            JP
+          </Heading>
+          <Mobile customStyles={'margin-left: auto;'}>
+            <MobileMenuToggle
+              open={mobileMenuOpen}
+              toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+          </Mobile>
+          <Tablet>
+            <Navbar>
+              <NavbarItem>
+                <Link to="/">Home</Link>
+              </NavbarItem>
+              <NavbarItem>
+                <Link to="#projects">Projects</Link>
+              </NavbarItem>
+              <NavbarItem>
+                <Link to="#values">Values</Link>
+              </NavbarItem>
+              {/* <NavbarItem submenu>
+              <Link to="/components">Components</Link>
+              <SubMenu>
+                <SubMenuItem>
+                  <Link to="/components/layout">Layout</Link>
+                </SubMenuItem>
+                <SubMenuItem>
+                  <Link to="/components/inputs">Inputs</Link>
+                </SubMenuItem>
+                <SubMenuItem>
+                  <Link to="/components/display">Display</Link>
+                </SubMenuItem>
+              </SubMenu>
+            </NavbarItem> */}
+              {/* <NavbarItem square>
+              <a href="/">
+                <FontAwesomeIcon
+                  icon="heart"
+                  style={{ width: 20, height: 20, fontSize: 24 }}
+                />
+              </a>
+            </NavbarItem> */}
+            </Navbar>
+          </Tablet>
+
+          <MobileMenu open={mobileMenuOpen}>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="#">Home</Link>
             </MobileMenuItem>
-            <MobileMenuItem>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="#projects">Projects</Link>
             </MobileMenuItem>
-            <MobileMenuItem>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="#values">Values</Link>
             </MobileMenuItem>
             {/* <MobileMenuItem submenu>
@@ -100,47 +149,12 @@ const Layout = ({ children }) => (
               </MobileSubMenu>
             </MobileMenuItem> */}
           </MobileMenu>
-        </Mobile>
-        <Tablet>
-          <Navbar>
-            <NavbarItem>
-              <Link to="/">Home</Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link to="#projects">Projects</Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link to="#values">Values</Link>
-            </NavbarItem>
-            {/* <NavbarItem submenu>
-              <Link to="/components">Components</Link>
-              <SubMenu>
-                <SubMenuItem>
-                  <Link to="/components/layout">Layout</Link>
-                </SubMenuItem>
-                <SubMenuItem>
-                  <Link to="/components/inputs">Inputs</Link>
-                </SubMenuItem>
-                <SubMenuItem>
-                  <Link to="/components/display">Display</Link>
-                </SubMenuItem>
-              </SubMenu>
-            </NavbarItem> */}
-            {/* <NavbarItem square>
-              <a href="/">
-                <FontAwesomeIcon
-                  icon="heart"
-                  style={{ width: 20, height: 20, fontSize: 24 }}
-                />
-              </a>
-            </NavbarItem> */}
-          </Navbar>
-        </Tablet>
-      </Header>
-      {children}
-    </Wrapper>
-  </ThemeProvider>
-);
+        </Header>
+        {children}
+      </Wrapper>
+    </ThemeProvider>
+  );
+};
 
 const Wrapper = styled.div`
   color: ${(props) => props.theme.color.gray.five};
