@@ -3,7 +3,7 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["airbnb", "gatsby-standard"],
+  "extends": ["airbnb"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -34,7 +34,7 @@
     "jsx-a11y/no-autofocus": 1,
     "jsx-a11y/no-noninteractive-element-interactions": 1,
     "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-quotes": 0,
+    "jsx-quotes": 2,
     "max-len": [0, 80, 4],
     "no-console": [0],
     "no-else-return": [0],
