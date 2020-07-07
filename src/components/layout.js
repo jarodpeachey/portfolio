@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faBolt,
@@ -68,11 +68,43 @@ library.add(
   faEnvelope,
 );
 
+const GlobalStyles = createGlobalStyle`
+  p {
+    color: ${(props) => props.theme.color.gray.three};
+    line-height: 1.7;
+    font-size: ${(props) => props.theme.fontSize.p}px;
+    font-weight: 400;
+  }
+  .dark p, .dark code, .dark span, .dark {
+    color: ${(props) => props.theme.color.gray.seven};
+  }
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: ${(props) => props.theme.color.gray.eight};
+  }
+  pre {
+    border-radius: 6px;
+    overflow-x: scroll;
+    background: props.theme.color.gray.eight;
+    font-family: monospace;
+    code {
+      font-family: monospace;
+      line-height: 21px;
+      font-size: 16px;
+    }
+  }
+  .dark pre {
+    background: ${(props) => props.theme.color.gray.two};
+    padding: 12px;
+    overflow-x: scroll;
+  }
+`;
+
 const Layout = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <Wrapper>
         <Header fixed color="transparent">
           <Heading
