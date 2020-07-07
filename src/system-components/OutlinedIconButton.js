@@ -15,21 +15,21 @@ const OutlinedIconButton = ({
     {link ? (
       <a className="no-styling" href={link}>
         <StyledOutlinedIconButton
-            color={color}
-            variant={variant}
-            className={className}
-            onClick={onClick || null}
-            link
+          color={color}
+          variant={variant}
+          className={className}
+          onClick={onClick || null}
+          link
         >
           {children}
         </StyledOutlinedIconButton>
       </a>
     ) : (
       <StyledOutlinedIconButton
-          color={color}
-          variant={variant}
-          className={className}
-          onClick={onClick || null}
+        color={color}
+        variant={variant}
+        className={className}
+        onClick={onClick || null}
       >
         {children}
       </StyledOutlinedIconButton>
@@ -39,7 +39,7 @@ const OutlinedIconButton = ({
 
 const StyledOutlinedIconButton = styled.button`
   outline: none;
-margin-right: 12px;
+  margin-right: 12px;
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -52,56 +52,56 @@ margin-right: 12px;
     props.variant === 'rounded' ? '100px' : props.theme.radius.two};
   cursor: pointer;
   transition: all 0.15s;
-  :hover, :focus
- {
+  :hover,
+  :focus {
     box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary : props.color === 'secondary' ? props.theme.color.secondary : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};
     transform: scale(1.02);
     background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-        props.theme.color.secondary :
-        props.color === 'error' ?
-          props.theme.color.error :
-          props.color === 'success' ?
-            props.theme.color.success :
-            props.color === 'white' ?
-              '#ffffff' :
-              ''};
+      props.color === 'primary'
+        ? props.theme.color.primary
+        : props.color === 'secondary'
+        ? props.theme.color.secondary
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'white'
+        ? '#ffffff'
+        : ''};
     color: ${(props) =>
-    props.color === 'primary' ||
+      props.color === 'primary' ||
       props.color === 'secondary' ||
       props.color === 'error' ||
-      props.color === 'success' ?
-      'white' :
-      ''};
+      props.color === 'success'
+        ? 'white'
+        : ''};
   }
   border: 2px solid
     ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-        props.theme.color.secondary :
-        props.color === 'error' ?
-          props.theme.color.error :
-          props.color === 'success' ?
-            props.theme.color.success :
-            props.color === 'white' ?
-              '#ffffff' :
-              ''};
+      props.color === 'primary'
+        ? props.theme.color.primary
+        : props.color === 'secondary'
+        ? props.theme.color.secondary
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'white'
+        ? '#ffffff'
+        : ''};
   background: transparent;
   color: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-        props.theme.color.secondary :
-        props.color === 'error' ?
-          props.theme.color.error :
-          props.color === 'success' ?
-            props.theme.color.success :
-            props.color === 'white' ?
-              '#ffffff' :
-              ''};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'white'
+      ? '#ffffff'
+      : ''};
 `;
 
 export default OutlinedIconButton;

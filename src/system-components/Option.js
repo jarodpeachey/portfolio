@@ -20,8 +20,7 @@ const Wrapper = styled.div`
       props.active ? props.theme.color.primary : props.theme.color.gray.four};
   }
   color: ${(props) => (props.active ? 'white' : '')};
-  background: ${(props) =>
-    props.active ? props.theme.color.primary : ''};
+  background: ${(props) => (props.active ? props.theme.color.primary : '')};
   :active {
     background: ${(props) => props.theme.color.primary};
     color: white;

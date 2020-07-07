@@ -62,15 +62,15 @@ const NotificationWrapper = styled.div`
   padding: ${(props) => props.theme.spacing.three}px
     ${(props) => props.theme.spacing.five}px;
   background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-      props.theme.color.secondary :
-      props.color === 'success' ?
-      props.theme.color.success :
-      props.color === 'error' ?
-      props.theme.color.error :
-      props.theme.color.gray.eight};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.gray.eight};
   * {
     color: ${(props) => (props.color ? 'white' : null)};
   }

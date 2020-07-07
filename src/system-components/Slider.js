@@ -123,15 +123,15 @@ const StyledBackground = styled.div`
   left: 0;
   top: 0;
   background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-      props.theme.color.secondary :
-      props.color === 'success' ?
-      props.theme.color.success :
-      props.color === 'error' ?
-      props.theme.color.error :
-      props.theme.color.primary};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.primary};
   border-radius: 9999px;
 `;
 
@@ -145,15 +145,15 @@ const StyledSlider = styled.div`
   display: block;
   border-radius: 999px;
   background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-      props.theme.color.secondary :
-      props.color === 'success' ?
-      props.theme.color.success :
-      props.color === 'error' ?
-      props.theme.color.error :
-      props.theme.color.primary}20;
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.primary}20;
   height: 5px;
   width: 100%;
 `;
@@ -166,15 +166,15 @@ const StyledThumb = styled.div`
   top: -5px;
   // opacity: 0.5;
   background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-      props.theme.color.secondary :
-      props.color === 'success' ?
-      props.theme.color.success :
-      props.color === 'error' ?
-      props.theme.color.error :
-      props.theme.color.primary};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.primary};
   cursor: pointer;
 `;
 

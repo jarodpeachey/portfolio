@@ -3,7 +3,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const React = require('react');
 const PropTypes = require('prop-types');
 
-function _extends () {
+function _extends() {
   _extends =
     Object.assign ||
     function (target) {
@@ -82,7 +82,7 @@ const checkedIcon = React.createElement(
   }),
 );
 
-function createBackgroundColor (
+function createBackgroundColor(
   pos,
   checkedPos,
   uncheckedPos,
@@ -119,7 +119,7 @@ function createBackgroundColor (
   return newColor;
 }
 
-function convertShorthandColor (color) {
+function convertShorthandColor(color) {
   if (color.length === 7) {
     return color;
   }
@@ -133,7 +133,7 @@ function convertShorthandColor (color) {
   return sixDigitColor;
 }
 
-function getBackgroundColor (pos, checkedPos, uncheckedPos, offColor, onColor) {
+function getBackgroundColor(pos, checkedPos, uncheckedPos, offColor, onColor) {
   const sixDigitOffColor = convertShorthandColor(offColor);
   const sixDigitOnColor = convertShorthandColor(onColor);
   return createBackgroundColor(
@@ -155,20 +155,14 @@ const hexColorPropType = function (props, propName, componentName) {
     (prop.length !== 4 && prop.length !== 7)
   ) {
     return new Error(
-      `Invalid prop '${ 
-        propName 
-        }' supplied to '${ 
-        componentName 
-        }'. '${ 
-        propName 
-        }' has to be either a 3-digit or 6-digit hex-color string. Valid examples: '#abc', '#123456'`,
+      `Invalid prop '${propName}' supplied to '${componentName}'. '${propName}' has to be either a 3-digit or 6-digit hex-color string. Valid examples: '#abc', '#123456'`,
     );
   }
 
   return null;
 };
 
-function objectWithoutProperties (obj, exclude) {
+function objectWithoutProperties(obj, exclude) {
   const target = {};
 
   for (const k in obj)
@@ -184,12 +178,12 @@ function objectWithoutProperties (obj, exclude) {
 const Switch =
   /* @__PURE__ */
   (function (Component) {
-    function Switch (props) {
+    function Switch(props) {
       Component.call(this, props);
-      const {height} = props;
-      const {width} = props;
-      const {handleDiameter} = props;
-      const {checked} = props;
+      const { height } = props;
+      const { width } = props;
+      const { handleDiameter } = props;
+      const { checked } = props;
       this.$handleDiameter = handleDiameter || height - 2;
       this.$checkedPos = Math.max(
         width - height,
@@ -219,7 +213,7 @@ const Switch =
     Switch.prototype = Object.create(Component && Component.prototype);
     Switch.prototype.constructor = Switch;
 
-    Switch.prototype.componentDidUpdate = function componentDidUpdate (
+    Switch.prototype.componentDidUpdate = function componentDidUpdate(
       prevProps,
     ) {
       if (prevProps.checked === this.props.checked) {
@@ -232,7 +226,7 @@ const Switch =
       });
     };
 
-    Switch.prototype.$onDragStart = function $onDragStart (clientX) {
+    Switch.prototype.$onDragStart = function $onDragStart(clientX) {
       this.$inputRef.focus();
       this.setState({
         $startX: clientX,
@@ -241,13 +235,13 @@ const Switch =
       });
     };
 
-    Switch.prototype.$onDrag = function $onDrag (clientX) {
+    Switch.prototype.$onDrag = function $onDrag(clientX) {
       const ref = this.state;
-      const {$startX} = ref;
-      const {$isDragging} = ref;
-      const {$pos} = ref;
+      const { $startX } = ref;
+      const { $isDragging } = ref;
+      const { $pos } = ref;
       const ref$1 = this.props;
-      const {checked} = ref$1;
+      const { checked } = ref$1;
       const startPos = checked ? this.$checkedPos : this.$uncheckedPos;
       const mousePos = startPos + clientX - $startX; // We need this check to fix a windows glitch where onDrag is triggered onMouseDown in some cases
 
@@ -269,13 +263,13 @@ const Switch =
       }
     };
 
-    Switch.prototype.$onDragStop = function $onDragStop (event) {
+    Switch.prototype.$onDragStop = function $onDragStop(event) {
       const ref = this.state;
-      const {$pos} = ref;
-      const {$isDragging} = ref;
-      const {$dragStartingTime} = ref;
+      const { $pos } = ref;
+      const { $isDragging } = ref;
+      const { $dragStartingTime } = ref;
       const ref$1 = this.props;
-      const {checked} = ref$1;
+      const { checked } = ref$1;
       const halfwayCheckpoint = (this.$checkedPos + this.$uncheckedPos) / 2; // Simulate clicking the handle
 
       const timeSinceStart = Date.now() - $dragStartingTime;
@@ -305,7 +299,7 @@ const Switch =
       this.$lastDragAt = Date.now();
     };
 
-    Switch.prototype.$onMouseDown = function $onMouseDown (event) {
+    Switch.prototype.$onMouseDown = function $onMouseDown(event) {
       event.preventDefault(); // Ignore right click and scroll
 
       if (typeof event.button === 'number' && event.button !== 0) {
@@ -319,12 +313,12 @@ const Switch =
         window.addEventListener('mouseup', this.$onMouseUp);
     };
 
-    Switch.prototype.$onMouseMove = function $onMouseMove (event) {
+    Switch.prototype.$onMouseMove = function $onMouseMove(event) {
       event.preventDefault();
       this.$onDrag(event.clientX);
     };
 
-    Switch.prototype.$onMouseUp = function $onMouseUp (event) {
+    Switch.prototype.$onMouseUp = function $onMouseUp(event) {
       this.$onDragStop(event);
       typeof window !== 'undefined' &&
         window.removeEventListener('mousemove', this.$onMouseMove);
@@ -332,21 +326,21 @@ const Switch =
         window.removeEventListener('mouseup', this.$onMouseUp);
     };
 
-    Switch.prototype.$onTouchStart = function $onTouchStart (event) {
+    Switch.prototype.$onTouchStart = function $onTouchStart(event) {
       this.$checkedStateFromDragging = null;
       this.$onDragStart(event.touches[0].clientX);
     };
 
-    Switch.prototype.$onTouchMove = function $onTouchMove (event) {
+    Switch.prototype.$onTouchMove = function $onTouchMove(event) {
       this.$onDrag(event.touches[0].clientX);
     };
 
-    Switch.prototype.$onTouchEnd = function $onTouchEnd (event) {
+    Switch.prototype.$onTouchEnd = function $onTouchEnd(event) {
       event.preventDefault();
       this.$onDragStop(event);
     };
 
-    Switch.prototype.$onInputChange = function $onInputChange (event) {
+    Switch.prototype.$onInputChange = function $onInputChange(event) {
       // This condition is unfortunately needed in some browsers where the input's change event might get triggered
       // right after the dragstop event is triggered (occurs when dropping over a label element)
       if (Date.now() - this.$lastDragAt > 50) {
@@ -360,27 +354,27 @@ const Switch =
       }
     };
 
-    Switch.prototype.$onKeyUp = function $onKeyUp () {
+    Switch.prototype.$onKeyUp = function $onKeyUp() {
       this.$lastKeyUpAt = Date.now();
     };
 
-    Switch.prototype.$setHasOutline = function $setHasOutline () {
+    Switch.prototype.$setHasOutline = function $setHasOutline() {
       this.setState({
         $hasOutline: true,
       });
     };
 
-    Switch.prototype.$unsetHasOutline = function $unsetHasOutline () {
+    Switch.prototype.$unsetHasOutline = function $unsetHasOutline() {
       this.setState({
         $hasOutline: false,
       });
     };
 
-    Switch.prototype.$getInputRef = function $getInputRef (el) {
+    Switch.prototype.$getInputRef = function $getInputRef(el) {
       this.$inputRef = el;
     };
 
-    Switch.prototype.$onClick = function $onClick (event) {
+    Switch.prototype.$onClick = function $onClick(event) {
       event.preventDefault();
       this.$inputRef.focus();
       this.$onChange(event);
@@ -389,29 +383,29 @@ const Switch =
       });
     };
 
-    Switch.prototype.$onChange = function $onChange (event) {
+    Switch.prototype.$onChange = function $onChange(event) {
       const ref = this.props;
-      const {checked} = ref;
-      const {onChange} = ref;
-      const {id} = ref;
+      const { checked } = ref;
+      const { onChange } = ref;
+      const { id } = ref;
       onChange(!checked, event, id);
     };
 
-    Switch.prototype.render = function render () {
+    Switch.prototype.render = function render() {
       const ref = this.props;
-      const {disabled} = ref;
-      const {className} = ref;
-      const {offColor} = ref;
-      const {onColor} = ref;
-      const {offHandleColor} = ref;
-      const {onHandleColor} = ref;
+      const { disabled } = ref;
+      const { className } = ref;
+      const { offColor } = ref;
+      const { onColor } = ref;
+      const { offHandleColor } = ref;
+      const { onHandleColor } = ref;
       const checkedIcon$$1 = ref.checkedIcon;
       const uncheckedIcon$$1 = ref.uncheckedIcon;
-      const {boxShadow} = ref;
-      const {activeBoxShadow} = ref;
-      const {height} = ref;
-      const {width} = ref;
-      const {handleDiameter} = ref;
+      const { boxShadow } = ref;
+      const { activeBoxShadow } = ref;
+      const { height } = ref;
+      const { width } = ref;
+      const { handleDiameter } = ref;
       const rest$1 = objectWithoutProperties(ref, [
         'disabled',
         'className',
@@ -429,9 +423,9 @@ const Switch =
       ]);
       const rest = rest$1;
       const ref$1 = this.state;
-      const {$pos} = ref$1;
-      const {$isDragging} = ref$1;
-      const {$hasOutline} = ref$1;
+      const { $pos } = ref$1;
+      const { $isDragging } = ref$1;
+      const { $hasOutline } = ref$1;
       const rootStyle = {
         position: 'relative',
         display: 'inline-block',
@@ -517,15 +511,15 @@ const Switch =
         outline: 0,
         boxShadow: $hasOutline ? activeBoxShadow : boxShadow,
         border: 0,
-        WebkitTransition: $isDragging ?
-          null :
-          'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
-        MozTransition: $isDragging ?
-          null :
-          'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
-        transition: $isDragging ?
-          null :
-          'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
+        WebkitTransition: $isDragging
+          ? null
+          : 'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
+        MozTransition: $isDragging
+          ? null
+          : 'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
+        transition: $isDragging
+          ? null
+          : 'background-color 0.25s, transform 0.25s, box-shadow 0.15s',
       };
       const inputStyle = {
         border: 0,
@@ -549,7 +543,7 @@ const Switch =
             className: 'react-switch-bg',
             style: backgroundStyle,
             onClick: disabled ? null : this.$onClick,
-            onMouseDown (e) {
+            onMouseDown(e) {
               return e.preventDefault();
             },
           },
@@ -573,7 +567,7 @@ const Switch =
         React.createElement('div', {
           className: 'react-switch-handle',
           style: handleStyle,
-          onClick (e) {
+          onClick(e) {
             return e.preventDefault();
           },
           onMouseDown: disabled ? null : this.$onMouseDown,
@@ -582,22 +576,18 @@ const Switch =
           onTouchEnd: disabled ? null : this.$onTouchEnd,
           onTouchCancel: disabled ? null : this.$unsetHasOutline,
         }),
-        React.createElement(
-          'input',
-          {
-            
-            type: 'checkbox',
-              role: 'switch',
-              disabled,
-              style: inputStyle,
-            ...rest,
-            ref: this.$getInputRef,
-              onFocus: this.$setHasOutline,
-              onBlur: this.$unsetHasOutline,
-              onKeyUp: this.$onKeyUp,
-              onChange: this.$onInputChange,
-          },
-        ),
+        React.createElement('input', {
+          type: 'checkbox',
+          role: 'switch',
+          disabled,
+          style: inputStyle,
+          ...rest,
+          ref: this.$getInputRef,
+          onFocus: this.$setHasOutline,
+          onBlur: this.$unsetHasOutline,
+          onKeyUp: this.$onKeyUp,
+          onChange: this.$onInputChange,
+        }),
       );
     };
 

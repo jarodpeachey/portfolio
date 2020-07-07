@@ -62,19 +62,18 @@ const ToggleWrapper = styled.div`
   cursor: pointer;
   border: 1px solid
     ${(props) =>
-      props.checked || props.filled ?
-        props.theme.color.primary :
-        props.theme.color.gray.four};
+      props.checked || props.filled
+        ? props.theme.color.primary
+        : props.theme.color.gray.four};
   padding: 2px;
   transition: 0.15s;
-  background: ${(props) =>
-    props.filled ? props.theme.color.primary : null};
+  background: ${(props) => (props.filled ? props.theme.color.primary : null)};
   :hover {
     border: 1px solid
       ${(props) =>
-        props.checked || props.filled ?
-          props.theme.color.primary :
-          `${props.theme.color.primary}60`};
+        props.checked || props.filled
+          ? props.theme.color.primary
+          : `${props.theme.color.primary}60`};
   }
 `;
 
@@ -84,11 +83,11 @@ const Indicator = styled.div`
   width: 18px;
   border-radius: 999px;
   background: ${(props) =>
-    props.filled ?
-      'white' :
-      props.checked ?
-      props.theme.color.primary :
-      props.theme.color.gray.eight};
+    props.filled
+      ? 'white'
+      : props.checked
+      ? props.theme.color.primary
+      : props.theme.color.gray.eight};
   margin-left: ${(props) => (props.checked ? 'calc(100% - 18px)' : 0)};
 `;
 

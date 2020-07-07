@@ -55,7 +55,8 @@ const Toggle = styled.div`
       props.hover ? props.theme.color.gray.one : props.theme.color.gray.five};
   border-radius: 99px;
   padding: 16px;
-  transition: color 0.15s ease-out, border 0.15s ease-out, transform 0.3s ease-in-out;
+  transition: color 0.15s ease-out, border 0.15s ease-out,
+    transform 0.3s ease-in-out;
   height: 30px;
   width: 30px;
   display: flex;

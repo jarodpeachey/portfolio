@@ -67,7 +67,8 @@ const Wrapper = styled.div`
 `;
 
 const CheckboxWrapper = styled.label`
-  color: ${(props) => (props.disabled ? `${props.theme.color.gray.five}50` : '')};
+  color: ${(props) =>
+    props.disabled ? `${props.theme.color.gray.five}50` : ''};
   display: block;
   position: relative;
   display: flex;

@@ -24,17 +24,17 @@ const H1 = ({
 
 const StyledH1 = styled.h1`
   color: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-      props.theme.color.secondary :
-      props.color === 'success' ?
-      props.theme.color.success :
-      props.color === 'error' ?
-      props.theme.color.error :
-      props.background === 'dark' ?
-      props.theme.color.lighter :
-      props.theme.color.gray.nine};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.background === 'dark'
+      ? props.theme.color.lighter
+      : props.theme.color.gray.nine};
   ${(props) =>
     props.customStyles &&
     css`

@@ -78,8 +78,8 @@ const Wrapper = styled.div`
     `}
 
   ${(props) =>
-    props.widthOne !== 'auto' ?
-      `
+    props.widthOne !== 'auto'
+      ? `
     @media (min-width: ${props.breakpointOne}px) and (max-width: ${
           props.breakpointTwo || 9999
         }px) {
@@ -89,12 +89,12 @@ const Wrapper = styled.div`
     display: flex !important;
     flex: none !important;
   }
-  ` :
-      ''}
+  `
+      : ''}
 
   ${(props) =>
-    props.widthTwo !== 'auto' ?
-      `
+    props.widthTwo !== 'auto'
+      ? `
         @media (min-width: ${props.breakpointTwo}px) {
           width: ${(props.widthTwo / 12) * 100}% !important;
           padding: ${props.spacingY}px ${props.spacingX}px!important;
@@ -102,12 +102,12 @@ const Wrapper = styled.div`
           display: flex !important;
           flex: none !important;
         }
-      ` :
-      ''}
+      `
+      : ''}
 
   ${(props) =>
-    props.widthThree !== 'auto' ?
-      `
+    props.widthThree !== 'auto'
+      ? `
         @media (min-width: ${props.breakpointThree}px) {
           width: ${(props.widthThree / 12) * 100}% !important;
           padding: ${props.spacingY}px ${props.spacingX}px !important;
@@ -115,31 +115,31 @@ const Wrapper = styled.div`
           display: flex !important;
           flex: none !important;
         }
-      ` :
-      ''}
+      `
+      : ''}
 
   ${(props) =>
-    props.widthOne === 'auto' ?
-      `
+    props.widthOne === 'auto'
+      ? `
     @media (min-width: ${props.breakpointOne}px) and (max-width: ${
           props.breakpointTwo !== undefined ? props.breakpointTwo : 2400
         }px) {
     // min-width: 50%;
     flex: 1 1 0;
   }
-  ` :
-      ''}
+  `
+      : ''}
 
   ${(props) =>
-    props.widthTwo === 'auto' ?
-      `
+    props.widthTwo === 'auto'
+      ? `
     @media (min-width: ${props.breakpointTwo}px) {
     // max-width: 50% !important;
     min-width: 50%;
     flex: 1 1 0;
   }
-  ` :
-      ''}
+  `
+      : ''}
 `;
 
 Column.propTypes = {

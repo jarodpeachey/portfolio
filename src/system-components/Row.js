@@ -69,9 +69,9 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: ${(props) =>
-      props.standardWidth ?
-        '0' :
-        `0 -${props.spacingX}px 0 -${props.spacingX}px`};
+      props.standardWidth
+        ? '0'
+        : `0 -${props.spacingX}px 0 -${props.spacingX}px`};
   }
   ${(props) =>
     props.flexDirections &&
@@ -85,9 +85,9 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: ${
-      props.standardWidth ?
-        '0' :
-        `0 -${props.spacingX}px 0 -${props.spacingX}px`
+      props.standardWidth
+        ? '0'
+        : `0 -${props.spacingX}px 0 -${props.spacingX}px`
     };
   `};
 `;

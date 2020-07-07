@@ -5,19 +5,19 @@ import { theme } from '../components/theme';
 
 const Input = ({ className = '', placeholder = '', onChange, size }) => (
   <StyledInput
-      size={size}
-      onChange={onChange || null}
-      placeholder={placeholder}
+    size={size}
+    onChange={onChange || null}
+    placeholder={placeholder}
   />
 );
 
 const StyledInput = styled.input`
   padding: ${(props) =>
-    props.size === 'small' ?
-      '10px 12px' :
-      props.size === 'large' ?
-        '16px 18px' :
-        '14px 14px'};
+    props.size === 'small'
+      ? '10px 12px'
+      : props.size === 'large'
+      ? '16px 18px'
+      : '14px 14px'};
   margin-right: 12px;
   display: inline-block;
   border-radius: ${(props) => props.theme.radius.two};

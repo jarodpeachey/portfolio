@@ -72,14 +72,14 @@ const SelectWrapper = styled.div`
   width: 100%;
   transition-duration: 0.15s;
   border: ${(props) =>
-    props.open ?
-      `1px solid ${props.theme.color.primary}` :
-      `1px solid ${props.theme.color.gray.four}`};
+    props.open
+      ? `1px solid ${props.theme.color.primary}`
+      : `1px solid ${props.theme.color.gray.four}`};
   :hover {
     border: ${(props) =>
-      props.open ?
-        `1px solid ${props.theme.color.primary}` :
-        `1px solid ${props.theme.color.primary}60`};
+      props.open
+        ? `1px solid ${props.theme.color.primary}`
+        : `1px solid ${props.theme.color.primary}60`};
   }
 `;
 

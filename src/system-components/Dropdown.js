@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   width: fit-content;
   z-index: 999;
   transition-duration: 0.15s !important;
-
 `;
 
 const SubMenuWrapper = styled.div`

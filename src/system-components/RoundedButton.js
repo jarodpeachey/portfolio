@@ -8,19 +8,19 @@ const Button = ({ children, className = '', onClick, link, color }) => (
     {link ? (
       <a className="no-styling" href={link}>
         <StyledButton
-            color={color}
-            className={className}
-            onClick={onClick || null}
-            link
+          color={color}
+          className={className}
+          onClick={onClick || null}
+          link
         >
           {children}
         </StyledButton>
       </a>
     ) : (
       <StyledButton
-          color={color}
-          className={className}
-          onClick={onClick || null}
+        color={color}
+        className={className}
+        onClick={onClick || null}
       >
         {children}
       </StyledButton>
@@ -35,30 +35,30 @@ const StyledButton = styled.button`
   cursor: pointer;
   border-radius: ${(props) => props.theme.radius.two};
   transition: all 0.15s;
-  :hover, :focus
- {
+  :hover,
+  :focus {
     box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary : props.color === 'secondary' ? props.theme.color.secondary : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};
     transform: scale(1.02);
   }
   background: ${(props) =>
-    props.color === 'primary' ?
-      props.theme.color.primary :
-      props.color === 'secondary' ?
-        props.theme.color.secondary :
-        props.color === 'error' ?
-          props.theme.color.error :
-          props.color === 'success' ?
-            props.theme.color.success :
-            props.color === 'white' ?
-              '#ffffff' :
-              ''};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'white'
+      ? '#ffffff'
+      : ''};
   color: ${(props) =>
     props.color === 'primary' ||
     props.color === 'secondary' ||
     props.color === 'error' ||
-    props.color === 'success' ?
-      'white' :
-      ''};
+    props.color === 'success'
+      ? 'white'
+      : ''};
 `;
 
 export default Button;

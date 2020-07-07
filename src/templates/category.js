@@ -23,7 +23,8 @@ const PostTemplate = ({ data, pageContext, location }) => {
 
   return (
     // <Layout>
-      {/* <SEO
+    {
+      /* <SEO
         title={`${category.title} Posts - Five Minute Developer`}
         description={`Web development posts about ${category.title}`}
       />
@@ -47,7 +48,8 @@ const PostTemplate = ({ data, pageContext, location }) => {
           list
           posts={posts.edges}
         />
-      </Section> */}
+      </Section> */
+    }
     // </Layout>
   );
 };

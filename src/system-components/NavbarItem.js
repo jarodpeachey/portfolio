@@ -9,10 +9,7 @@ const NavbarItem = ({ children, submenu, square, align }) => {
   if (submenu) {
     console.log(children[0].props);
     const link = (
-      <Link
-        to={children[0].props.to}
-        className="menu-item"
-      >
+      <Link to={children[0].props.to} className="menu-item">
         {children[0].props.children}
         <FontAwesomeIcon
           style={{
