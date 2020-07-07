@@ -37,7 +37,7 @@ const SEO = ({ title, description, image, article, slug }) => {
     <Helmet title={seo.title}>
       <html lang="en" />
       <meta name="description" content={seo.description} />
-      <meta name="image" content={image} />
+      <meta name="image" content={seo.image} />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
@@ -45,7 +45,7 @@ const SEO = ({ title, description, image, article, slug }) => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      {image && <meta property="og:image" content={image} />}
+      {image && <meta property="og:image" content={seo.image} />}
 
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       {author && <meta name="twitter:creator" content={author} />}
@@ -53,9 +53,9 @@ const SEO = ({ title, description, image, article, slug }) => {
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
-      {image && <meta name="twitter:image" content={image} />}
-      {image && <meta name="twitter:card" content={image} />}
-      {image && <meta property="twitter:card" content={image} />}
+      {image && <meta name="twitter:image" content={seo.image} />}
+      {image && <meta name="twitter:card" content={seo.image} />}
+      {image && <meta property="twitter:card" content={seo.image} />}
     </Helmet>
   );
 };
