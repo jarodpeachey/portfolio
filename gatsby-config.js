@@ -1,11 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: 'Jarod Peachey - Front End Web Developer',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    description:
+      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     defaultTitle: 'Jarod Peachey - Front End Web Developer',
-    defaultDescription: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    baseUrl: '/',
+    defaultDescription:
+      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    baseUrl: 'jarodpeachey.netlify.com',
     author: '@jarod_peachey',
+    socials: {
+      twitter: `https://twitter.com/jarod_peachey`,
+      github: `https://github.com/jarodpeachey`,
+    },
   },
   plugins: [
     {

@@ -24,12 +24,11 @@ const SEO = ({ title, description, image, article, slug }) => {
   } = site.siteMetadata;
 
   // const defaultImage = '/images/home.png';
-
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${image}` || null,
-    url: `https://jarodpeachey.netlify.app${pathname}`,
+    image: `https://${baseUrl}${image}` || null,
+    url: `https://${baseUrl}${pathname}`,
   };
 
   // `https://${baseUrl}${defaultImage}`
