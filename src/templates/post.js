@@ -12,7 +12,7 @@ import {
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../utils/formatDate';
-import SEO from '../components/SEO';
+import SEO from '../components/seo';
 import Button from '../system-components/Button';
 import Flex from '../system-components/Flex';
 import Paragraph from '../system-components/Paragraph';

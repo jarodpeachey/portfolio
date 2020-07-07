@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from '../components/theme';
 import { Helmet } from 'react-helmet';
-import SEO from '../components/SEO';
+import SEO from '../components/seo';
 
 library.add(faCheck, faUser, faCalendar, faCommentAlt, faArrowUp);
 

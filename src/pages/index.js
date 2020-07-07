@@ -25,7 +25,7 @@ import Flex from '../system-components/Flex';
 import Collapse from '../system-components/Collapse';
 import Text from '../system-components/Text';
 import TextArea from '../system-components/TextArea';
-import SEO from '../components/SEO';
+import SEO from '../components/seo';
 
 const App = ({}) => {
   const [message, setMessage] = useState('');
