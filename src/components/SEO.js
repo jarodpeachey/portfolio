@@ -54,8 +54,13 @@ const SEO = ({ title, description, image, article, slug }) => {
         <meta name="twitter:description" content={seo.description} />
       )}
       {image && <meta name="twitter:image" content={seo.image} />}
-      {image && <meta name="twitter:card" content={seo.image} />}
-      {image && <meta property="twitter:card" content={seo.image} />}
+      {image && (
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+          data-react-helmet="true"
+        />
+      )}
     </Helmet>
   );
 };
