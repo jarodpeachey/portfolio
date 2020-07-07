@@ -25,6 +25,7 @@ import Flex from '../system-components/Flex';
 import Collapse from '../system-components/Collapse';
 import Text from '../system-components/Text';
 import TextArea from '../system-components/TextArea';
+import SEO from '../components/SEO';
 
 const App = ({}) => {
   const [message, setMessage] = useState('');
@@ -85,13 +86,10 @@ const App = ({}) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Jarod Peachey - Front End Web Developer</title>
-        <meta
-          name="description"
-          content="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML, CSS and the JAMstack."
-        />
-      </Helmet>
+      <SEO
+        title="Jarod Peachey - Front End Web Developer"
+        description="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML, CSS and the JAMstack."
+      />
       <Hero
         background={`linear-gradient(
         to right,
@@ -109,25 +107,27 @@ const App = ({}) => {
         >
           I build cool websites using cool tech.
         </Heading>
-        <Paragraph>
-          I'm a software engineer with experience building full-stack
-          applications, modern websites and custom REST APIs. I have a passion
-          for making websites that are as simple and easy to use as possible,
-          without taking away from their functionality.
-        </Paragraph>
-        <Paragraph className="mb-6">
-          I specialize in serverless architecture, headless websites and the
-          JAMstack. Every application I build is secure, high-performing and
-          easy to maintain.
-        </Paragraph>
-        <Flex hAlign="start">
-          <Button className="mr-2" color="primary" link="#contact">
-            Contact Me
-          </Button>
-          <Button color="primary" variant="plain" link="#projects">
-            My Work
-          </Button>
-        </Flex>
+        <Container size="sm" align="left">
+          <Paragraph>
+            I'm a software engineer with experience building full-stack
+            applications, modern websites and custom REST APIs. I have a passion
+            for making websites that are as simple and easy to use as possible,
+            without taking away from their functionality.
+          </Paragraph>
+          <Paragraph className="mb-6">
+            I specialize in serverless architecture, headless websites and the
+            JAMstack. Every application I build is secure, high-performing and
+            easy to maintain.
+          </Paragraph>
+          <Flex hAlign="start">
+            <Button className="mr-2" color="primary" link="#contact">
+              Contact Me
+            </Button>
+            <Button color="primary" variant="plain" link="#projects">
+              My Work
+            </Button>
+          </Flex>
+        </Container>
       </Hero>
       <Section spacing="large">
         <Container customStyles="position: relative;">

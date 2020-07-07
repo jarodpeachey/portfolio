@@ -1,7 +1,79 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// const { isFuture } = require('date-fns');
+// const { format } = require('date-fns');
+const path = require('path');
+const fs = require('fs');
+const request = require('request');
+const { generateImage } = require('./src/utils/generateImage');
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    {
+      posts: allCosmicjsPosts(filter: { status: { eq: "published" } }) {
+        edges {
+          node {
+            metadata {
+              categories {
+                title
+                slug
+              }
+              image {
+                url
+              }
+            }
+            title
+            published_at(formatString: "DD/MM/YYYY")
+            content
+            status
+            slug
+          }
+        }
+      }
+      categories: allCosmicjsCategories {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  result.data.posts.edges.forEach(({ node }, index) => {
+    console.log(node);
+    const seoImage = generateImage({
+      title: node.title,
+      path: node.title.toLowerCase().replace(/ /g, ''),
+      url: node.metadata.image.url,
+    });
+
+    createPage({
+      path: `/blog/${node.slug}`,
+      component: path.resolve('./src/templates/post.js'),
+      context: {
+        slug: node.slug,
+        // seoImage,
+      },
+    });
+  });
+
+  result.data.categories.edges.forEach(({ node }, index) => {
+    const path = `/category/${node.slug}`;
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/category.js'),
+      context: {
+        category: node.slug,
+      },
+    });
+  });
+};
+
+// exports.createPages = async ({ graphql, actions }) => {
+//   await createBlogPostPages(graphql, actions);
+// };

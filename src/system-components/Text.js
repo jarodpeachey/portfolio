@@ -34,6 +34,16 @@ const Text = ({
         >
           {children}
         </Small>
+      ) : type === 'div' ? (
+        <Div
+          className={className}
+          background={background}
+          customStyles={customStyles}
+          color={color}
+          title={display === 'title'}
+        >
+          {children}
+        </Div>
       ) : (
         <Span
           className={className}
@@ -59,7 +69,26 @@ const Span = styled.span`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : null};
+      : props.theme.color.gray.four};
+  ${(props) =>
+    props.customStyles &&
+    css`
+      ${props.customStyles}
+    `}
+  text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+`;
+
+const Div = styled.div`
+  color: ${(props) =>
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.gray.four};
   ${(props) =>
     props.customStyles &&
     css`
@@ -77,7 +106,7 @@ const Small = styled.small`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : null};
+      : props.theme.color.gray.four};
   ${(props) =>
     props.customStyles &&
     css`
@@ -97,7 +126,7 @@ const Strong = styled.strong`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : null};
+      : props.theme.color.gray.four};
   ${(props) =>
     props.customStyles &&
     css`

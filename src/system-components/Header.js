@@ -41,7 +41,7 @@ const Header = ({ children, color, scrollColor, fixed }) => {
       fixed={fixed}
       scrollColor={scrollColor}
     >
-      <Container>
+      <Container size="lg">
         <InnerContainer
           color={color}
           scrolled={typeof window !== 'undefined' && window.scrollY > 50}

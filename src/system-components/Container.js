@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Container = ({
   children,
@@ -9,6 +9,7 @@ const Container = ({
   style,
   size,
   customStyles,
+  align,
 }) => {
   return (
     <StyledContainer
@@ -17,6 +18,7 @@ const Container = ({
       background={background}
       style={style}
       size={size}
+      align={align}
       customStyles={customStyles}
     >
       {children}
@@ -26,17 +28,22 @@ const Container = ({
 
 const StyledContainer = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: ${(props) =>
+    props.align === 'left'
+      ? '0px'
+      : props.align === 'right'
+      ? '0px auto 0px 0px'
+      : '0 auto'};
   max-width: ${(props) =>
     props.maxWidth
       ? props.maxWidth
       : props.size === 'xs'
-      ? '769'
+      ? '600'
       : props.size === 'sm'
-      ? '960'
+      ? '769'
       : props.size === 'lg'
-      ? '1500'
-      : '1300'}px;
+      ? '1300'
+      : '1000'}px;
   padding-left: 24px;
   padding-right: 24px;
   @media (min-width: 576px) {
@@ -47,6 +54,12 @@ const StyledContainer = styled.div`
     padding-left: 48px;
     padding-right: 48px;
   }
+  ${(props) =>
+    (props.align === 'left' || props.align === 'right') &&
+    css`
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    `};
   ${(props) => props.customStyles}
 `;
 
