@@ -35,7 +35,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={`${post.title} - Jarod Peachey`}
         description={post.metadata.description}
-        image={pageContext.seoImage || post.metadata.image.url}
+        image={pageContext.seoImage}
       />
       <Hero
         background={`linear-gradient(

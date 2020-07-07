@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             metadata {
+              description
               categories {
                 title
                 slug
@@ -44,10 +45,10 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) throw result.errors;
 
   result.data.posts.edges.forEach(({ node }, index) => {
-    console.log(node);
     const seoImage = generateImage({
       title: node.title,
-      path: node.title.toLowerCase().replace(/ /g, ''),
+      description: node.metadata.description,
+      imagePath: node.title.toLowerCase().replace(/ /g, '-'),
       url: node.metadata.image.url,
     });
 
@@ -56,22 +57,22 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve('./src/templates/post.js'),
       context: {
         slug: node.slug,
-        // seoImage,
+        seoImage,
       },
     });
   });
 
-  result.data.categories.edges.forEach(({ node }, index) => {
-    const path = `/category/${node.slug}`;
+  // result.data.categories.edges.forEach(({ node }, index) => {
+  //   const path = `/category/${node.slug}`;
 
-    createPage({
-      path,
-      component: require.resolve('./src/templates/category.js'),
-      context: {
-        category: node.slug,
-      },
-    });
-  });
+  //   createPage({
+  //     path,
+  //     component: require.resolve('./src/templates/category.js'),
+  //     context: {
+  //       category: node.slug,
+  //     },
+  //   });
+  // });
 };
 
 // exports.createPages = async ({ graphql, actions }) => {
