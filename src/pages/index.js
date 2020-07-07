@@ -17,7 +17,7 @@ import Code from '../system-components/Code';
 import Info from '../system-components/Info';
 import Container from '../system-components/Container';
 import Chip from '../system-components/Chip';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import SubTitle from '../system-components/SubTitle';
 import Paragraph from '../system-components/Paragraph';
 import Input from '../system-components/Input';
@@ -25,7 +25,7 @@ import Flex from '../system-components/Flex';
 import Collapse from '../system-components/Collapse';
 import Text from '../system-components/Text';
 import TextArea from '../system-components/TextArea';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 
 const App = ({}) => {
   const [message, setMessage] = useState('');

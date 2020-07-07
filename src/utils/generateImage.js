@@ -184,7 +184,7 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.fillText('@jarod_peachey', 1140, 540);
 
   const buffer = canvas.toBuffer('image/png');
-  const imageLocation = `/images/${imagePath}/seo.png`;
+  const imageLocation = `/images/${imagePath}/SEO.png`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;

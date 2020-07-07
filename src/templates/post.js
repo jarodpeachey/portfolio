@@ -12,7 +12,7 @@ import {
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../utils/formatDate';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 import Button from '../system-components/Button';
 import Flex from '../system-components/Flex';
 import Paragraph from '../system-components/Paragraph';
@@ -21,7 +21,7 @@ import Heading from '../system-components/Heading';
 import Hero from '../system-components/Hero';
 import { theme } from '../components/theme';
 import Section from '../system-components/Section';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Text from '../system-components/Text';
 import Info from '../system-components/Info';
 
