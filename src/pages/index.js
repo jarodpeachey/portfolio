@@ -57,14 +57,11 @@ const App = ({}) => {
   };
 
   const onSubmit = (e) => {
-    console.log(name);
-    console.log(message);
     e.preventDefault();
     let body = '';
     let subject = '';
 
     if (message && email) {
-      console.log('No name');
       body = `
         ${message}
       `;

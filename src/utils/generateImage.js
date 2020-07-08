@@ -8,9 +8,6 @@ const path = require('path');
 // FUNCTION TO DOWNLOAD IMAGE TO DIRECTORY
 const download = function (uri, filename, callback) {
   request.head(uri, (err, res, body) => {
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
-
     request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
   });
 };
@@ -107,11 +104,10 @@ function roundRect(
 }
 
 exports.generateImage = ({ title, imagePath, url }) => {
-  console.log(url);
-  console.log(url);
   createDir(imagePath);
-  console.log(url);
-  if (url) {
+  if (url !== null) {
+    console.log(url);
+    console.log(path.extname(url));
     download(
       `${url}`,
       `static/images/${imagePath}/featured_image${path.extname(url)}`,
@@ -192,8 +188,12 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.textAlign = 'right';
   // context.fillText('@jarod_peachey', 1140, 540);
 
-  const buffer = canvas.toBuffer(`image/${url ? path.extname(url) : 'png'}`);
-  const imageLocation = `/images/${imagePath}/seo${url ? path.extname(url) : '.png'}`;
+  const buffer = canvas.toBuffer(
+    `image/${url !== null ? path.extname(url).replace('.', '') : 'png'}`,
+  );
+  const imageLocation = `/images/${imagePath}/seo${
+    url !== null ? path.extname(url) : '.png'
+  }`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;
