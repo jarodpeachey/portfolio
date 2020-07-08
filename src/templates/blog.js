@@ -1,38 +1,46 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
-import WeVoteImageTwo from '../images/wevote_two.jpg';
-import StaticboxImage from '../images/staticbox.jpg';
-import JellyImage from '../images/jelly-development.jpg';
-import SystemImage from '../images/system.jpg';
 import { theme } from '../components/theme';
 import Hero from '../system-components/Hero';
 import Section from '../system-components/Section';
-import Button from '../system-components/Button';
-import Row from '../system-components/Row';
 
 import Heading from '../system-components/Heading';
-import Alert from '../system-components/Alert';
-import Code from '../system-components/Code';
-import Info from '../system-components/Info';
 import Container from '../system-components/Container';
-import Chip from '../system-components/Chip';
+import Row from '../system-components/Row';
 import Layout from '../components/Layout';
-import SubTitle from '../system-components/SubTitle';
-import Paragraph from '../system-components/Paragraph';
-import Input from '../system-components/Input';
-import Flex from '../system-components/Flex';
-import Collapse from '../system-components/Collapse';
-import Text from '../system-components/Text';
-import TextArea from '../system-components/TextArea';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/formatDate';
+import Text from '../system-components/Text';
+import Paragraph from '../system-components/Paragraph';
+import { shortenText } from '../utils/shortenText';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = ({ pageContext }) => {
-  const { group, index, first, last, pageCount } = pageContext;
+  let { group, index, first, last, pageCount } = pageContext;
   const previousUrl = index - 1 === 1 ? '/blog' : `/blog/${index - 1}`;
   const nextUrl = `/blog/${index + 1}`;
+
+  const getPaginationButtons = () => {
+    const paginationButtons = [];
+    let count = pageCount;
+
+    console.log('Page count: ', pageCount);
+
+    while (count > 0) {
+      console.log('Test');
+      paginationButtons.push({
+        number: count,
+        path: count === 1 ? '/blog' : `/blog/${count}`,
+      });
+      count--;
+    }
+
+    paginationButtons.reverse();
+
+    return paginationButtons;
+  };
 
   return (
     <Layout>
@@ -47,7 +55,6 @@ const Blog = ({ pageContext }) => {
         ${theme.color.secondary}
       )`}
       >
-        <Heading type="h1">{pageCount} pages.</Heading>
         <Heading type="h1" customStyles={`color: ${theme.color.gray.one};`}>
           🧠 Jarod's Brain
         </Heading>
@@ -56,7 +63,7 @@ const Blog = ({ pageContext }) => {
           display="title"
           customStyles={`color: ${theme.color.gray.six}; margin-bottom: 38px;`}
         >
-          A jumbled collection of tips, tricks, bug fixes and random thougts
+          A jumbled collection of tips, tricks, bug fixes and random thoughts
           about web development. Shipped directly from Jarod's brain.
         </Heading>
       </Hero>
@@ -66,18 +73,69 @@ const Blog = ({ pageContext }) => {
           margin-top: -60px;
         `}
       >
-        <Container size="lg">
+        <Container size="lg" customStyles={'position: relative;'}>
           <Heading type="h5" display="title" color="primary">
             Recent
           </Heading>
-          {group.map(({ node }) => (
-            <div key={node.id}>
-              <div>{formatDate(node.published_at)}</div>
-              <Link to={`/blog/${node.slug}`}>{node.title}</Link>
-              <div>{node.metadata.description}</div>
-            </div>
+          <Row spacing={[12]} breakpoints={[769, 1200]}>
+            {group.map(({ node }) => (
+              <Link
+                className="no-styling"
+                widths={[6, 4]}
+                to={`/blog/${node.slug}`}
+              >
+                <Card className="dark" key={node.id}>
+                  <Heading
+                    customStyles={'line-height: 30px !important;'}
+                    className="mt-none mb-3"
+                    type="h3"
+                  >
+                    {node.title}
+                  </Heading>
+                  <Text
+                    customStyles={`color: ${theme.color.gray.five} !important;`}
+                    type="span"
+                  >
+                    {formatDate(node.published_at)}
+                  </Text>
+                  <Paragraph>
+                    {shortenText(node.metadata.description, 200)}
+                  </Paragraph>
+                </Card>
+              </Link>
+            ))}
+          </Row>
+          {first ? (
+            <PaginationPlaceholder disabled={first}>
+              {'<'}
+            </PaginationPlaceholder>
+          ) : (
+            <PaginationButton disabled={first} to={first ? '#' : previousUrl}>
+              {'<'}
+            </PaginationButton>
+          )}
+
+          {getPaginationButtons().map((button) => (
+            <PaginationButton
+              active={
+                button.number === 1
+                  ? window.location.pathname === '/blog'
+                  : window.location.pathname.includes(button.path)
+              }
+              to={button.path}
+            >
+              {button.number}
+            </PaginationButton>
           ))}
-          <div className="previousLink">
+          {last ? (
+            <PaginationPlaceholder disabled={last}>{'>'}</PaginationPlaceholder>
+          ) : (
+            <PaginationButton disabled={last} to={last ? '#' : nextUrl}>
+              {'>'}
+            </PaginationButton>
+          )}
+
+          {/* <div className="previousLink">
             <NavLink
               test={first}
               url={previousUrl}
@@ -86,7 +144,56 @@ const Blog = ({ pageContext }) => {
           </div>
           <div className="nextLink">
             <NavLink test={last} url={nextUrl} text="Go to Next Page" />
-          </div>
+          </div> */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </Container>
       </Section>
     </Layout>
@@ -100,5 +207,90 @@ const NavLink = (props) => {
     return <span>{props.text}</span>;
   }
 };
+
+const Card = styled.div`
+  background: white;
+  border-radius: 6px;
+  padding: 18px;
+  height: 100%;
+  @media (min-width: 769px) {
+    padding: 24px;
+  }
+  box-shadow: 8px 8px 35px -20px #000;
+`;
+
+const PaginationPlaceholder = styled.div`
+  background: ${(props) =>
+    props.disabled
+      ? `${props.theme.color.gray.eight}40`
+      : props.active
+      ? props.theme.color.secondary
+      : props.theme.color.gray.eight};
+  color: ${(props) =>
+    props.disabled
+      ? props.theme.color.gray.seven
+      : props.active
+      ? props.theme.color.gray.one
+      : props.theme.color.gray.four} !important;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-right: 8px;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 999px;
+  cursor: ${(props) => (!props.disabled ? 'pointer' : 'initial')};
+  :hover {
+    color: ${(props) =>
+      props.disabled
+        ? props.theme.color.gray.seven
+        : props.theme.color.gray.one} !important;
+    background: ${(props) =>
+      props.disabled
+        ? `${props.theme.color.gray.eight}40`
+        : props.active
+        ? props.theme.color.secondary
+        : props.theme.color.gray.eight};
+  }
+`;
+
+const PaginationButton = styled(Link)`
+  background: ${(props) =>
+    props.disabled
+      ? `${props.theme.color.gray.eight}40`
+      : props.active
+      ? props.theme.color.secondary
+      : props.theme.color.gray.eight};
+  color: ${(props) =>
+    props.disabled
+      ? props.theme.color.gray.seven
+      : props.active
+      ? props.theme.color.gray.one
+      : props.theme.color.gray.four} !important;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-right: 8px;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 999px;
+  cursor: ${(props) => (!props.disabled ? 'pointer' : 'initial')};
+  :hover {
+    color: ${(props) =>
+      props.disabled
+        ? props.theme.color.gray.seven
+        : props.theme.color.gray.one} !important;
+    background: ${(props) =>
+      props.disabled
+        ? `${props.theme.color.gray.eight}40`
+        : props.active
+        ? props.theme.color.secondary
+        : props.theme.color.gray.eight};
+  }
+`;
 
 export default Blog;

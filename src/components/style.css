@@ -43,7 +43,6 @@ body,
   color: var(--dark-two);
 }
 body {
-  overflow: hidden;
 }
 .container,
 .container-xs {
@@ -100,6 +99,12 @@ body {
     padding-right: calc(100vw * 0.25);
   }
 }
+
+.no-styling {
+  text-decoration: none;
+  color: inherit;
+}
+
 .m-none {
   margin: 0 !important;
 }

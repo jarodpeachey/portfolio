@@ -55,7 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
     edges: result.data.posts.edges,
     createPage,
     pageTemplate: 'src/templates/blog.js',
-    pageLength: 2,
+    pageLength: 6,
     pathPrefix: 'blog',
     buildPath: (index, pathPrefix) =>
       index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default

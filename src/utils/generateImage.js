@@ -151,7 +151,7 @@ exports.generateImage = ({ title, imagePath, url }) => {
   height = height - 50;
 
   //set the copy style
-  context.font = 'bold 68pt Open Sans';
+  context.font = 'bold 64pt Open Sans';
   context.textAlign = 'left';
   context.textBaseline = 'top';
   context.fillStyle = '#fff';
@@ -163,12 +163,12 @@ exports.generateImage = ({ title, imagePath, url }) => {
   //redraw the title over multiple lines
   const words = title.split(' ');
   let line = '';
-  let fromTop = 150;
+  let fromTop = 125;
   words.forEach((word) => {
     let testLine = line + word + ' ';
     if (context.measureText(testLine).width > width) {
       // context.fillText(line.trim(), 60, fromTop);
-      drawTextBG(context, line.trim(), 68, 60, fromTop, 117, 0, true);
+      drawTextBG(context, line.trim(), 64, 60, fromTop, 117, 0, true);
       line = word + ' ';
       fromTop = fromTop + 125;
     } else {
@@ -176,7 +176,7 @@ exports.generateImage = ({ title, imagePath, url }) => {
     }
   });
 
-  drawTextBG(context, line.trim(), 68, 60, fromTop, 117, 0, true);
+  drawTextBG(context, line.trim(), 64, 60, fromTop, 117, 0, true);
   drawTextBG(context, 'jarodpeachey.netlify.com', 22, 60, 510, 60, 10, false);
 
   // context.fillStyle = '#ccc';
@@ -189,11 +189,9 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.fillText('@jarod_peachey', 1140, 540);
 
   const buffer = canvas.toBuffer(
-    `image/${url !== null ? 'png' : 'png'}`,
+    `image/png`,
   );
-  const imageLocation = `/images/${imagePath}/seo${
-    url !== null ? '.png' : '.png'
-  }`;
+  const imageLocation = `/images/${imagePath}/seo.png`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;
