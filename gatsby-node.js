@@ -3,12 +3,13 @@
 const path = require('path');
 const fs = require('fs');
 const request = require('request');
+const createPaginatedPages = require('gatsby-paginate');
 const { generateImage } = require('./src/utils/generateImage');
 
 generateImage({
   title: 'Jarod Peachey - Web Developer',
   imagePath: 'jarod-peachey',
-  url: null
+  url: null,
 });
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -49,6 +50,16 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (result.errors) throw result.errors;
+
+  createPaginatedPages({
+    edges: result.data.posts.edges,
+    createPage,
+    pageTemplate: 'src/templates/blog.js',
+    pageLength: 2,
+    pathPrefix: 'blog',
+    buildPath: (index, pathPrefix) =>
+      index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
+  });
 
   result.data.posts.edges.forEach(({ node }, index) => {
     const seoImage = generateImage({
