@@ -22,7 +22,7 @@ const SEO = ({ title, description, image, article, slug }) => {
   } = site.siteMetadata;
 
   console.log(image);
-  const defaultImage = '/images/jarod-peachey/seo.png';
+  const defaultImage = '/images/home/seo.png';
 
   return (
     <Helmet title={title || defaultTitle}>
