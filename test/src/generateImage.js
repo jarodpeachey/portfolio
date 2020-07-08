@@ -1,6 +1,5 @@
 const fs = require('fs');
 const { registerFont, createCanvas } = require('canvas');
-const request = require('request');
 const mkdirp = require('mkdirp');
 const path = require('path');
 // import something from '../images';
@@ -103,19 +102,8 @@ function roundRect(
   }
 }
 
-exports.generateImage = ({ title, imagePath, url }) => {
+exports.generateImage = ({ title, imagePath }) => {
   createDir(imagePath);
-  if (url !== null) {
-    console.log(url);
-    console.log(path.extname(url));
-    download(
-      `${url}`,
-      `static/images/${imagePath}/featured_image${path.extname(url)}`,
-      () => {
-        console.log('DONE!');
-      },
-    );
-  }
 
   //define canvas size
   let width = 1200;
@@ -189,9 +177,9 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.fillText('@jarod_peachey', 1140, 540);
 
   const buffer = canvas.toBuffer(
-    `image/jpg}`,
+    `image/png}`,
   );
-  const imageLocation = `/images/${imagePath}/seo.jpg`;
+  const imageLocation = `/images/${imagePath}/seo.png`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;
