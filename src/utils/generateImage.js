@@ -62,7 +62,7 @@ function roundRect(
   height, //y height
   radius, //radius of corner rounding
   fill, //background
-  stroke, //border
+  stroke,
 ) {
   if (typeof stroke === 'undefined') {
     stroke = true;
