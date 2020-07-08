@@ -14,8 +14,6 @@ const SEO = ({ title, description, image, article, slug }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
-  console.log(image, title);
-
   const {
     defaultTitle,
     defaultDescription,
@@ -23,21 +21,21 @@ const SEO = ({ title, description, image, article, slug }) => {
     author,
   } = site.siteMetadata;
 
-  // const defaultImage = '/images/home.png';
+  const defaultImage = '/images/jarod-peachey/featured-image.png';
+
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `https://${baseUrl}${image}` || null,
+    image: `https://${baseUrl}${image}` || `https://${baseUrl}${defaultImage}`,
     url: `https://${baseUrl}${pathname}`,
   };
-
-  // `https://${baseUrl}${defaultImage}`
 
   return (
     <Helmet title={seo.title}>
       <html lang="en" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <link rel="canonical" href={`https://jarodpeachey.netlify.com${pathname}`} />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
@@ -45,22 +43,15 @@ const SEO = ({ title, description, image, article, slug }) => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      {image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property="og:image" content={seo.image} />}
 
-      {/* <meta name="twitter:card" content="summary_large_image" /> */}
+      <meta name="twitter:card" content="summary_large_image" />
       {author && <meta name="twitter:creator" content={author} />}
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
-      {image && <meta name="twitter:image" content={seo.image} />}
-      {image && (
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-          data-react-helmet="true"
-        />
-      )}
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   );
 };
