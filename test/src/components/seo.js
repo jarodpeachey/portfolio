@@ -39,11 +39,11 @@ function SEO({ description, lang, meta, title }) {
       <meta name="og:type" content="website" />
       <meta
         name="og:image"
-        content="https://boring-einstein-be2b9a.netlify.app/images/gatsby-astronaut.png"
+        content="https://boring-einstein-be2b9a.netlify.app/images/jarod-peachey/seo.png"
       />
       <meta
         name="twitter:image"
-        content="https://boring-einstein-be2b9a.netlify.app/images/gatsby-astronaut.png"
+        content="https://boring-einstein-be2b9a.netlify.app/images/jarod-peachey/seo.png"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={site.siteMetadata.author} />
