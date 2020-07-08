@@ -107,10 +107,19 @@ function roundRect(
 }
 
 exports.generateImage = ({ title, imagePath, url }) => {
+  console.log(url);
+  console.log(url);
   createDir(imagePath);
-  download(`${url}`, `static/images/${imagePath}/featured_image.png`, () => {
-    console.log('DONE!');
-  });
+  console.log(url);
+  if (url) {
+    download(
+      `${url}`,
+      `static/images/${imagePath}/featured_image${path.extname(url)}`,
+      () => {
+        console.log('DONE!');
+      },
+    );
+  }
 
   //define canvas size
   let width = 1200;
@@ -183,8 +192,8 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.textAlign = 'right';
   // context.fillText('@jarod_peachey', 1140, 540);
 
-  const buffer = canvas.toBuffer('image/png');
-  const imageLocation = `/images/${imagePath}/seo.png`;
+  const buffer = canvas.toBuffer(`image/${url ? path.extname(url) : 'png'}`);
+  const imageLocation = `/images/${imagePath}/seo${url ? path.extname(url) : '.png'}`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;

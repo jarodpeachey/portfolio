@@ -5,6 +5,12 @@ const fs = require('fs');
 const request = require('request');
 const { generateImage } = require('./src/utils/generateImage');
 
+generateImage({
+  title: 'Jarod Peachey - Web Developer',
+  imagePath: 'jarod-peachey',
+  url: null
+});
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
