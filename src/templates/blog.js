@@ -48,7 +48,7 @@ const Blog = ({ pageContext }) => {
         title="Blog - Jarod Peachey"
         description="A collection of tips, tricks, bug fixes and random thoughts
           about web development. React, Javascript and the JAMstack."
-        seoImage="/images/blog/seo.js"
+        image="/images/blog/seo.js"
       />
       <Hero
         background={`linear-gradient(
