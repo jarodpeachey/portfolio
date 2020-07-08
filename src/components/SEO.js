@@ -32,24 +32,25 @@ const SEO = ({ title, description, image, article, slug }) => {
 
   return (
     <Helmet title={seo.title}>
-      <html lang="en" />
+      {/* <html lang="en" />
       <link
         rel="canonical"
         href={`https://jarodpeachey.netlify.com${pathname}`}
       />
-      <meta name="description" content={seo.description} />
+      <meta name="description" content={seo.description} /> */}
 
-      <meta name="og:type" content="website" />
+      {/* <meta name="og:type" content="website" />
       <meta name="og:url" content={seo.url} />
-      <meta name="og:description" content={seo.description} />
+      <meta name="og:description" content={seo.description} /> */}
       <meta name="og:image" content={seo.image} />
+      <meta name="image" content={seo.image} />
 
-      <meta name="twitter:widgets:theme" content="light" />
+      {/* <meta name="twitter:widgets:theme" content="light" />
       <meta name="twitter:dnt" content="on" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={author || '@jarod_peachey'} />
       <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:description" content={seo.description} /> */}
       <meta name="twitter:image" content={seo.image} />
     </Helmet>
   );
