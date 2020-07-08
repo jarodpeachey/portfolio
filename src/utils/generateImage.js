@@ -163,7 +163,7 @@ exports.generateImage = ({ title, imagePath, url }) => {
   //redraw the title over multiple lines
   const words = title.split(' ');
   let line = '';
-  let fromTop = 125;
+  let fromTop = 160;
   words.forEach((word) => {
     let testLine = line + word + ' ';
     if (context.measureText(testLine).width > width) {

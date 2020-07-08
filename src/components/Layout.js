@@ -26,6 +26,7 @@ import {
   faAward,
   faPencilRuler,
   faEnvelope,
+  faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import NavbarItem from '../system-components/NavbarItem';
 import SubMenuItem from '../system-components/SubMenuItem';
@@ -66,6 +67,7 @@ library.add(
   faBolt,
   faPencilRuler,
   faEnvelope,
+  faArrowRight
 );
 
 const GlobalStyles = createGlobalStyle`

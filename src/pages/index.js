@@ -155,7 +155,14 @@ const App = ({}) => {
               <Info
                 color="primary"
                 align="left"
-                customStyles={`background: ${theme.color.gray.eight}; :hover {box-shadow: 2px 10px 70px -18px ${theme.color.gray.eight};} transition-duration: .15s;`}
+                customStyles={`  background: ${(props) =>
+                  props.theme.color.gray.eight};
+  background: #25293A;
+  border-radius: 6px;
+
+
+
+  box-shadow: 8px 8px 35px -20px #000;`}
                 image={<img src={WeVoteImageTwo} />}
               >
                 <div className="px-4 py-4 pb-y">
@@ -213,7 +220,14 @@ const App = ({}) => {
               <Info
                 color="primary"
                 align="left"
-                customStyles={`background: ${theme.color.gray.eight}; :hover {box-shadow: 2px 10px 70px -18px ${theme.color.gray.eight};} transition-duration: .15s;`}
+                customStyles={`  background: ${(props) =>
+                  props.theme.color.gray.eight};
+  background: #25293A;
+  border-radius: 6px;
+
+
+
+  box-shadow: 8px 8px 35px -20px #000;`}
                 image={<img src={StaticboxImage} />}
               >
                 <div className="px-4 py-4 pb-y">
@@ -276,7 +290,14 @@ const App = ({}) => {
               <Info
                 color="primary"
                 align="left"
-                customStyles={`background: ${theme.color.gray.eight}; :hover {box-shadow: 2px 10px 70px -18px ${theme.color.gray.eight};} transition-duration: .15s;`}
+                customStyles={`  background: ${(props) =>
+                  props.theme.color.gray.eight};
+  background: #25293A;
+  border-radius: 6px;
+
+
+
+  box-shadow: 8px 8px 35px -20px #000;`}
                 image={<img src={JellyImage} />}
               >
                 <div className="px-4 py-4 pb-y">
@@ -337,7 +358,14 @@ const App = ({}) => {
               <Info
                 color="primary"
                 align="left"
-                customStyles={`background: ${theme.color.gray.eight}; :hover {box-shadow: 2px 10px 70px -18px ${theme.color.gray.eight};} transition-duration: .15s;`}
+                customStyles={`  background: ${(props) =>
+                  props.theme.color.gray.eight};
+  background: #25293A;
+  border-radius: 6px;
+
+
+
+  box-shadow: 8px 8px 35px -20px #000;`}
                 image={<img src={SystemImage} />}
               >
                 <div className="px-4 py-4 pb-y">

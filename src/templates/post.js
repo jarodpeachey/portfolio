@@ -30,6 +30,12 @@ library.add(faCheck, faUser, faCalendar, faCommentAlt, faArrowUp);
 const PostTemplate = ({ data, pageContext, location }) => {
   const { post } = data;
 
+  console.log(pageContext.seoImage);
+  console.log(pageContext.seoImage);
+  console.log(pageContext.seoImage);
+  console.log(pageContext.seoImage);
+  console.log(pageContext.seoImage);
+
   return (
     <Layout>
       <SEO
@@ -76,21 +82,23 @@ const PostTemplate = ({ data, pageContext, location }) => {
         </Container>
       </Hero>
       <Section spacing="small" customStyles={'padding-top: 0;'}>
-        <Container customStyles="position: relative;">
-          <Card>
-            {post.metadata.markdown_content && (
-              <div id="post-content" className="dark">
-                <ReactMarkdown source={post.metadata.markdown_content} />
-              </div>
-            )}
-            {!post.metadata.markdown_content && (
-              <div
-                id="post-content"
-                className="dark"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            )}
-          </Card>
+        <Container size="lg">
+          <Container align="left" customStyles={'position: relative;'}>
+            <Card>
+              {post.metadata.markdown_content && (
+                <div id="post-content" className="dark">
+                  <ReactMarkdown source={post.metadata.markdown_content} />
+                </div>
+              )}
+              {!post.metadata.markdown_content && (
+                <div
+                  id="post-content"
+                  className="dark"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              )}
+            </Card>
+          </Container>
         </Container>
       </Section>
     </Layout>

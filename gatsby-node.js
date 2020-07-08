@@ -8,7 +8,13 @@ const { generateImage } = require('./src/utils/generateImage');
 
 generateImage({
   title: 'Jarod Peachey - Web Developer',
-  imagePath: 'jarod-peachey',
+  imagePath: 'home',
+  url: null,
+});
+
+generateImage({
+  title: 'Blog - Jarod Peachey',
+  imagePath: 'blog',
   url: null,
 });
 

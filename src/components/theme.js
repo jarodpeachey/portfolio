@@ -64,7 +64,7 @@ export const theme = {
       six: '#676f80',
       seven: '#3e475a',
       // 'eight': '#2c3446',
-      eight: '#1c2a3e',
+      eight: '#25293A',
       nine: '#14192b',
       // 'nine': '#15202b',
     },

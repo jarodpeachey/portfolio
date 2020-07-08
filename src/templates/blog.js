@@ -45,8 +45,10 @@ const Blog = ({ pageContext }) => {
   return (
     <Layout>
       <SEO
-        title="Jarod Peachey - Front End Web Developer"
-        description="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML, CSS and the JAMstack."
+        title="Blog - Jarod Peachey"
+        description="A collection of tips, tricks, bug fixes and random thoughts
+          about web development. React, Javascript and the JAMstack."
+        seoImage="/images/blog/seo.js"
       />
       <Hero
         background={`linear-gradient(
@@ -70,13 +72,10 @@ const Blog = ({ pageContext }) => {
       <Section
         spacing="sm"
         customStyles={`
-          margin-top: -60px;
+          margin-top: -40px;
         `}
       >
         <Container size="lg" customStyles={'position: relative;'}>
-          <Heading type="h5" display="title" color="primary">
-            Recent
-          </Heading>
           <Row spacing={[12]} breakpoints={[769, 1200]}>
             {group.map(({ node }) => (
               <Link
@@ -84,7 +83,7 @@ const Blog = ({ pageContext }) => {
                 widths={[6, 4]}
                 to={`/blog/${node.slug}`}
               >
-                <Card className="dark" key={node.id}>
+                <Card key={node.id}>
                   <Heading
                     customStyles={'line-height: 30px !important;'}
                     className="mt-none mb-3"
@@ -101,6 +100,27 @@ const Blog = ({ pageContext }) => {
                   <Paragraph>
                     {shortenText(node.metadata.description, 200)}
                   </Paragraph>
+                  <Link
+                    to={`/blog/${node.slug}`}
+                    style={{
+                      color: theme.color.secondary,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Read More
+                    <IconWrapper id="icon">
+                      <FontAwesomeIcon
+                        style={{
+                          color: theme.color.secondary,
+                          fontSize: 14,
+                          marginLeft: 8,
+                          position: 'relative',
+                          top: 2,
+                        }}
+                        icon="arrow-right"
+                      />
+                    </IconWrapper>
+                  </Link>
                 </Card>
               </Link>
             ))}
@@ -119,8 +139,10 @@ const Blog = ({ pageContext }) => {
             <PaginationButton
               active={
                 button.number === 1
-                  ? window.location.pathname === '/blog'
-                  : window.location.pathname.includes(button.path)
+                  ? typeof window !== 'undefined' &&
+                    window.location.pathname === '/blog/'
+                  : typeof window !== 'undefined' &&
+                    window.location.pathname.includes(button.path)
               }
               to={button.path}
             >
@@ -145,55 +167,6 @@ const Blog = ({ pageContext }) => {
           <div className="nextLink">
             <NavLink test={last} url={nextUrl} text="Go to Next Page" />
           </div> */}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </Container>
       </Section>
     </Layout>
@@ -209,14 +182,38 @@ const NavLink = (props) => {
 };
 
 const Card = styled.div`
-  background: white;
+  background: ${(props) => props.theme.color.gray.eight};
+  background: #25293a;
   border-radius: 6px;
   padding: 18px;
   height: 100%;
+  h3 {
+    transition: 0.15s !important;
+  }
   @media (min-width: 769px) {
     padding: 24px;
   }
   box-shadow: 8px 8px 35px -20px #000;
+  transition: .15s;
+  :hover {
+    box-shadow: 8px 8px 45px -15px #000;
+    // h3 {
+    //   color: ${(props) => props.theme.color.secondary} !important;
+    //   transition: 0.15s !important;
+    // }
+    #icon {
+      left: 0px !important;
+      opacity: 1 !important;
+    }
+  }
+`;
+
+const IconWrapper = styled.div`
+  opacity: 0;
+  position: relative;
+  transition: 0.15s;
+  left: -20px;
+  display: inline-block;
 `;
 
 const PaginationPlaceholder = styled.div`
