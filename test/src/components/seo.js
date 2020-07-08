@@ -52,11 +52,11 @@ function SEO ({ description, lang, meta, title }) {
         },
         {
           name: 'og:image',
-          content: 'https://boring-einstein-be2b9a.netlify.app/images/gatsby-astronaut.png',
+          content: 'https://boring-einstein-be2b9a.netlify.app/static/images/gatsby-astronaut.png',
         },
         {
           name: 'twitter:image',
-          content: 'https://boring-einstein-be2b9a.netlify.app/images/gatsby-astronaut.png',
+          content: 'https://boring-einstein-be2b9a.netlify.app/static/images/gatsby-astronaut.png',
         },
         {
           name: 'twitter:card',
