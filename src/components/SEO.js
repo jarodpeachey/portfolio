@@ -47,7 +47,7 @@ const SEO = ({ title, description, image, article, slug }) => {
 
       {/* <meta name="twitter:widgets:theme" content="light" />
       <meta name="twitter:dnt" content="on" />
-      <meta name="twitter:card" content="summary_large_image" />
+      // <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={author || '@jarod_peachey'} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} /> */}
