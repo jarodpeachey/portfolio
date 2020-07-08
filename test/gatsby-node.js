@@ -2,13 +2,6 @@
 // const { format } = require('date-fns');
 const path = require('path');
 const fs = require('fs');
-const { generateImage } = require('./src/generateImage');
-
-generateImage({
-  title: 'Jarod Peachey - Web Developer',
-  imagePath: 'jarod-peachey',
-});
-
 // exports.onCreatePage = ({ page, actions }) => {
 //   const { createPage, deletePage } = actions;
 //   deletePage(page)
