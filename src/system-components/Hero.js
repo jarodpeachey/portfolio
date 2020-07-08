@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import Container from '../system-components/Container';
 
 const Hero = ({ children, background }) => (
   <Wrapper>
     <Background background={background}>
       <div />
     </Background>
-    <Container className="container">
+    <Container>
       <div>{children}</div>
     </Container>
   </Wrapper>
@@ -31,12 +32,6 @@ const Background = styled.div`
   }
 
   z-index: -1;
-`;
-
-const Container = styled.div`
-  overflow: hidden;
-  margin: 0 auto;
-  z-index: 0;
 `;
 
 const Close = styled.div`

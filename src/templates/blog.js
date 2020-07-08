@@ -70,12 +70,12 @@ const Blog = ({ pageContext }) => {
         </Heading>
       </Hero>
       <Section
-        spacing="sm"
+        spacing="large"
         customStyles={`
-          margin-top: -40px;
+          margin-top: -60px;
         `}
       >
-        <Container size="lg" customStyles={'position: relative;'}>
+        <Container  customStyles={'position: relative;'}>
           <Row spacing={[12]} breakpoints={[769, 1200]}>
             {group.map(({ node }) => (
               <Link
@@ -125,6 +125,8 @@ const Blog = ({ pageContext }) => {
               </Link>
             ))}
           </Row>
+          <br />
+          <br />
           {first ? (
             <PaginationPlaceholder disabled={first}>
               {'<'}
@@ -156,7 +158,8 @@ const Blog = ({ pageContext }) => {
               {'>'}
             </PaginationButton>
           )}
-
+          <br />
+          <br />
           {/* <div className="previousLink">
             <NavLink
               test={first}

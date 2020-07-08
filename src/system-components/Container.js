@@ -38,12 +38,12 @@ const StyledContainer = styled.div`
     props.maxWidth
       ? props.maxWidth
       : props.size === 'xs'
-      ? '600'
+      ? '700'
       : props.size === 'sm'
-      ? '769'
+      ? '960'
       : props.size === 'lg'
-      ? '1300'
-      : '1000'}px;
+      ? '1500'
+      : '1200'}px;
   padding-left: 24px;
   padding-right: 24px;
   @media (min-width: 576px) {

@@ -82,8 +82,8 @@ const PostTemplate = ({ data, pageContext, location }) => {
         </Container>
       </Hero>
       <Section spacing="small" customStyles={'padding-top: 0;'}>
-        <Container size="lg">
-          <Container align="left" customStyles={'position: relative;'}>
+        <Container>
+          <Container align="left" size="sm" customStyles={'position: relative;'}>
             <Card>
               {post.metadata.markdown_content && (
                 <div id="post-content" className="dark">
