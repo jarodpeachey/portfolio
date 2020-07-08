@@ -110,7 +110,7 @@ exports.generateImage = ({ title, imagePath, url }) => {
     console.log(path.extname(url));
     download(
       `${url}`,
-      `static/images/${imagePath}/featured_image${path.extname(url)}`,
+      `static/images/${imagePath}/featured_image${path.extname(url).toLowerCase()}`,
       () => {
         console.log('DONE!');
       },
@@ -189,9 +189,11 @@ exports.generateImage = ({ title, imagePath, url }) => {
   // context.fillText('@jarod_peachey', 1140, 540);
 
   const buffer = canvas.toBuffer(
-    `image/jpg}`,
+    `image/${url !== null ? 'png' : 'png'}`,
   );
-  const imageLocation = `/images/${imagePath}/seo.jpg`;
+  const imageLocation = `/images/${imagePath}/seo${
+    url !== null ? '.png' : '.png'
+  }`;
   fs.writeFileSync(`static${imageLocation}`, buffer);
 
   return imageLocation;
