@@ -472,7 +472,7 @@ const App = ({}) => {
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        I built React Tiny Grid to solve a problem I saw. There were no grid systems for React that weren't super complex and easy to use. So, I created this grid system to work out-of-the-box, with a few advanced configuration options.
+                        I built React Tiny Grid to solve a problem I saw. There were no grid systems for React that weren't super complex and easy to use. I created this grid system to work out-of-the-box, with a few advanced configuration options.
                       </Paragraph>
                     </>
                   </Collapse>
