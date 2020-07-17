@@ -26,7 +26,7 @@ import {
   faAward,
   faPencilRuler,
   faEnvelope,
-  faArrowRight
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import NavbarItem from '../system-components/NavbarItem';
 import SubMenuItem from '../system-components/SubMenuItem';
@@ -67,7 +67,7 @@ library.add(
   faBolt,
   faPencilRuler,
   faEnvelope,
-  faArrowRight
+  faArrowRight,
 );
 
 const GlobalStyles = createGlobalStyle`
@@ -109,13 +109,16 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Wrapper>
         <Header fixed color="transparent">
-          <Heading
-            type="h1"
-            customStyles={'z-index: 999;'}
-            className="m-none ml-2"
-          >
-            JP
-          </Heading>
+          <Link to="/" className="no-styling">
+            <Heading
+              type="h1"
+              customStyles={'z-index: 999;'}
+              className="m-none ml-2"
+            >
+              JP
+            </Heading>
+          </Link>
+
           <Mobile customStyles={'margin-left: auto;'}>
             <MobileMenuToggle
               open={mobileMenuOpen}
@@ -126,6 +129,9 @@ const Layout = ({ children }) => {
             <Navbar>
               <NavbarItem>
                 <Link to="/">Home</Link>
+              </NavbarItem>
+              <NavbarItem>
+                <Link to="/blog">Blog</Link>
               </NavbarItem>
               <NavbarItem>
                 <Link to="#projects">Projects</Link>
@@ -160,7 +166,10 @@ const Layout = ({ children }) => {
 
           <MobileMenu open={mobileMenuOpen}>
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
-              <Link to="#">Home</Link>
+              <Link to="/">Home</Link>
+            </MobileMenuItem>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
+              <Link to="/blog">Blog</Link>
             </MobileMenuItem>
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="#projects">Projects</Link>

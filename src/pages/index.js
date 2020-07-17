@@ -5,6 +5,7 @@ import WeVoteImageTwo from '../images/wevote_two.jpg';
 import StaticboxImage from '../images/staticbox.jpg';
 import JellyImage from '../images/jelly-development.jpg';
 import SystemImage from '../images/system.jpg';
+import GridImage from '../images/react-tiny-grid.jpg';
 import { theme } from '../components/theme';
 import Hero from '../system-components/Hero';
 import Section from '../system-components/Section';
@@ -413,6 +414,72 @@ const App = ({}) => {
                   <Button
                     external
                     link="https://system-ui-kit.netlify.app"
+                    // variant="outlined"
+                    color="primary"
+                    customStyles={`
+                      // background: none !important;
+                      // padding-left: 0 !important;
+                    `}
+                  >
+                    Visit Site
+                  </Button>
+                </div>
+              </Info>
+            </div>
+            <div widths={[6, 4]}>
+              <Info
+                color="primary"
+                align="left"
+                customStyles={`  background: ${(props) =>
+                  props.theme.color.gray.eight};
+  background: #25293A;
+  border-radius: 6px;
+
+
+
+  box-shadow: 8px 8px 35px -20px #000;`}
+                image={<img src={GridImage} />}
+              >
+                <div className="px-4 py-4 pb-y">
+                  <Flex hAlign="start">
+                    <Chip color="primary" className="mr-2">
+                      React
+                    </Chip>
+                    <Chip color="primary" className="mr-2">
+                      Styled Components
+                    </Chip>
+                  </Flex>
+                </div>
+                <div className="p-4 pt-none">
+                  <Collapse>
+                    <>
+                      <Heading
+                        type="h3"
+                        customStyles={`color: ${theme.color.gray.one};`}
+                        className="m-none"
+                      >
+                        React Tiny Grid
+                      </Heading>
+                      <Text type="span">Sole Developer</Text>
+                    </>
+                    <>
+                      <Paragraph
+                        customStyles={`color: ${theme.color.gray.two};`}
+                      >
+                        React Tiny Grid is a grid system built for simplicity
+                        and ease of use.
+                      </Paragraph>
+                      <Paragraph
+                        customStyles={`color: ${theme.color.gray.two};`}
+                      >
+                        I built React Tiny Grid to solve a problem I saw. There were no grid systems for React that weren't super complex and easy to use. So, I created this grid system to work out-of-the-box, with a few advanced configuration options.
+                      </Paragraph>
+                    </>
+                  </Collapse>
+
+                  <Button
+                    external
+                    link="https://react-tiny-grid.netlify.app"
                     // variant="outlined"
                     color="primary"
                     customStyles={`

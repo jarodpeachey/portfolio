@@ -62,7 +62,7 @@ const Blog = ({ pageContext }) => {
         </Heading>
         <Heading
           type="h4"
-          display="title"
+          // display="title"
           customStyles={`color: ${theme.color.gray.six}; margin-bottom: 38px;`}
         >
           A jumbled collection of tips, tricks, bug fixes and random thoughts
@@ -72,68 +72,72 @@ const Blog = ({ pageContext }) => {
       <Section
         spacing="large"
         customStyles={`
-          margin-top: -60px;
+          margin-top: -115px;
         `}
       >
-        <Container  customStyles={'position: relative;'}>
+        <Container customStyles={'position: relative;'}>
           <Row spacing={[12]} breakpoints={[769, 1200]}>
-            {group.map(({ node }) => (
-              <Link
-                className="no-styling"
-                widths={[6, 4]}
-                to={`/blog/${node.slug}`}
-              >
-                <Card key={node.id}>
-                  <Heading
-                    customStyles={'line-height: 30px !important;'}
-                    className="mt-none mb-3"
-                    type="h3"
-                  >
-                    {node.title}
-                  </Heading>
-                  <Text
-                    customStyles={`color: ${theme.color.gray.five} !important;`}
-                    type="span"
-                  >
-                    {formatDate(node.published_at)}
-                  </Text>
-                  <Paragraph>
-                    {shortenText(node.metadata.description, 200)}
-                  </Paragraph>
-                  <Link
-                    to={`/blog/${node.slug}`}
-                    style={{
-                      color: theme.color.secondary,
-                      textDecoration: 'none',
-                    }}
-                  >
-                    Read More
-                    <IconWrapper id="icon">
-                      <FontAwesomeIcon
-                        style={{
-                          color: theme.color.secondary,
-                          fontSize: 14,
-                          marginLeft: 8,
-                          position: 'relative',
-                          top: 2,
-                        }}
-                        icon="arrow-right"
-                      />
-                    </IconWrapper>
-                  </Link>
-                </Card>
-              </Link>
-            ))}
+            {group.map(({ node }) => {
+              console.log(node.published_at);
+
+              return (
+                <Link
+                  className="no-styling"
+                  widths={[6, 4]}
+                  to={`/blog/${node.slug}`}
+                >
+                  <Card key={node.id}>
+                    <Heading
+                      customStyles={'line-height: 30px !important;'}
+                      className="mt-none mb-3"
+                      type="h3"
+                    >
+                      {node.title}
+                    </Heading>
+                    <Text
+                      customStyles={`color: ${theme.color.gray.five} !important;`}
+                      type="span"
+                    >
+                      {node.published_at}
+                    </Text>
+                    <Paragraph>
+                      {shortenText(node.metadata.description, 200)}
+                    </Paragraph>
+                    <Link
+                      to={`/blog/${node.slug}`}
+                      style={{
+                        color: theme.color.secondary,
+                        textDecoration: 'none',
+                      }}
+                    >
+                      Read More
+                      <IconWrapper id="icon">
+                        <FontAwesomeIcon
+                          style={{
+                            color: theme.color.secondary,
+                            fontSize: 14,
+                            marginLeft: 8,
+                            position: 'relative',
+                            top: 2,
+                          }}
+                          icon="arrow-right"
+                        />
+                      </IconWrapper>
+                    </Link>
+                  </Card>
+                </Link>
+              );
+            })}
           </Row>
           <br />
           <br />
           {first ? (
             <PaginationPlaceholder disabled={first}>
-              {'<'}
+              <FontAwesomeIcon style={{ position: 'relative', left: -1 }} icon="chevron-left" />
             </PaginationPlaceholder>
           ) : (
             <PaginationButton disabled={first} to={first ? '#' : previousUrl}>
-              {'<'}
+              <FontAwesomeIcon style={{ position: 'relative', left: -1 }} icon="chevron-left" />
             </PaginationButton>
           )}
 
@@ -142,7 +146,8 @@ const Blog = ({ pageContext }) => {
               active={
                 button.number === 1
                   ? typeof window !== 'undefined' &&
-                    window.location.pathname === '/blog/'
+                    (window.location.pathname === '/blog/' ||
+                      window.location.pathname === '/blog')
                   : typeof window !== 'undefined' &&
                     window.location.pathname.includes(button.path)
               }
@@ -152,10 +157,18 @@ const Blog = ({ pageContext }) => {
             </PaginationButton>
           ))}
           {last ? (
-            <PaginationPlaceholder disabled={last}>{'>'}</PaginationPlaceholder>
+            <PaginationPlaceholder disabled={last}>
+              <FontAwesomeIcon
+                style={{ position: 'relative', left: 1 }}
+                icon="chevron-right"
+              />
+            </PaginationPlaceholder>
           ) : (
             <PaginationButton disabled={last} to={last ? '#' : nextUrl}>
-              {'>'}
+              <FontAwesomeIcon
+                style={{ position: 'relative', left: 1 }}
+                icon="chevron-right"
+              />
             </PaginationButton>
           )}
           <br />

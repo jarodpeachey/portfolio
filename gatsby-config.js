@@ -6,7 +6,8 @@ module.exports = {
     defaultTitle: 'Jarod Peachey - Front End Web Developer',
     defaultDescription:
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    baseUrl: 'jarodpeachey.netlify.com',
+    baseUrl: 'https://jarodpeachey.netlify.app',
+    siteUrl: 'https://jarodpeachey.netlify.app',
     author: '@jarod_peachey',
     socials: {
       twitter: `https://twitter.com/jarod_peachey`,
@@ -47,6 +48,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
