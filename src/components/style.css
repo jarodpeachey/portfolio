@@ -501,3 +501,11 @@ body {
     height: 100%;
   }
 }
+
+ol > li {
+  margin-bottom: 6px;
+}
+
+li li:first-child {
+  margin-bottom: 3px;
+}
