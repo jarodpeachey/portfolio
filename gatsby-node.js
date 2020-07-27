@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const seoImage = generateImage({
       title: node.title,
       description: node.metadata.description,
-      imagePath: node.title.toLowerCase().replace(/ /g, '-'),
+      imagePath: node.title.toLowerCase().replace(/ /g, '-').replace('%', '-percent'),
       url: node.metadata.image.url,
     });
 
