@@ -32,11 +32,11 @@ const SEO = ({ title, description, image = null, article, slug }) => {
       <meta name="og:type" content="website" />
       <meta
         name="og:image"
-        content={`https://jarodpeachey.netlify.app${image}`}
+        content={`https://jarodpeachey.netlify.app${image}?123456`}
       />
       <meta
         name="twitter:image"
-        content={`https://jarodpeachey.netlify.app${image}`}
+        content={`https://jarodpeachey.netlify.app${image}?123456`}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={author} />
