@@ -8,9 +8,9 @@ module.exports = {
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     baseUrl: 'https://jarodpeachey.netlify.app',
     siteUrl: 'https://jarodpeachey.netlify.app',
-    author: '@jarod_peachey',
+    author: '@jarodpeachey',
     socials: {
-      twitter: `https://twitter.com/jarod_peachey`,
+      twitter: `https://twitter.com/jarodpeachey`,
       github: `https://github.com/jarodpeachey`,
     },
   },
