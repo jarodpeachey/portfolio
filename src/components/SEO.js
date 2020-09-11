@@ -31,7 +31,7 @@ const SEO = ({ title, description, image = null, article, slug }) => {
       <meta name="og:description" content={description || defaultDescription} />
       <meta name="og:type" content="website" />
       <meta
-        name="og:image"
+        name="og:image" 
         content={`https://jarodpeachey.netlify.app${image}?test=true`}
       />
       <meta
