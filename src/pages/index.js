@@ -82,6 +82,16 @@ const App = ({}) => {
     }
   };
 
+  // (function () {
+  //   window.hyperlogID = '68979bd3-fdef-421a-a33c-6b891d8ebd2d';
+
+  //   let d = document;
+  //   let s = d.createElement('script');
+  //   s.src = 'https://c.hyperlog.io/l.js';
+  //   s.async = 1;
+  //   d.getElementsByTagName('head')[0].appendChild(s);
+  // })();
+
   return (
     <Layout>
       <SEO
@@ -472,7 +482,11 @@ const App = ({}) => {
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        I built React Tiny Grid to solve a problem I saw. There were no grid systems for React that weren't super complex and easy to use. I created this grid system to work out-of-the-box, with a few advanced configuration options.
+                        I built React Tiny Grid to solve a problem I saw. There
+                        were no grid systems for React that weren't super
+                        complex and easy to use. I created this grid system to
+                        work out-of-the-box, with a few advanced configuration
+                        options.
                       </Paragraph>
                     </>
                   </Collapse>
