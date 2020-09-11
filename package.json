@@ -12,6 +12,7 @@
     "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
     "canvas": "^2.6.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-gatsby-standard": "^2.2.0",
