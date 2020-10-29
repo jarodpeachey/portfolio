@@ -21,6 +21,17 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
+        <script
+          async
+          src="https://cdn.panelbear.com/analytics.js?site=ER1ipYniu0J"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.panelbear=window.panelbear||function(){window.panelbearQ=window.panelbearQ||[],panelbearQ.push(arguments)},panelbear("config",{site:"ER1ipYniu0J"});',
+          }}
+        />
       </body>
     </html>
   );
