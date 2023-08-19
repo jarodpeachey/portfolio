@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import WeVoteImageTwo from '../images/wevote_two.jpg';
-import StaticboxImage from '../images/staticbox.jpg';
-import JellyImage from '../images/jelly-development.jpg';
-import SystemImage from '../images/system.jpg';
+import GlitterImage from '../images/glitter.png';
+import JellyImage from '../images/jelly.png';
+import MindtrustImage from '../images/mindtrust.png';
 import GridImage from '../images/react-tiny-grid.jpg';
 import { theme } from '../components/theme';
 import Hero from '../system-components/Hero';
@@ -239,17 +239,17 @@ const App = ({}) => {
 
 
   box-shadow: 8px 8px 35px -20px #000;`}
-                image={<img src={StaticboxImage} />}
+                image={<img src={GlitterImage} />}
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
                     <Chip color="primary" className="mr-2">
-                      React
+                      HTML
                     </Chip>
                     <Chip color="primary" className="mr-2">
-                      Gatsby
+                    CSS
                     </Chip>
-                    <Chip color="primary">JAMstack</Chip>
+                    <Chip color="primary">CHROME DEVTOOLS</Chip>
                   </Flex>
                 </div>
                 <div className="p-4 pt-none">
@@ -260,31 +260,27 @@ const App = ({}) => {
                         customStyles={`color: ${theme.color.gray.one};`}
                         className="m-none"
                       >
-                        Staticbox
+                        Glitter
                       </Heading>
-                      <Text type="span">Founder + Developer</Text>
+                      <Text type="span">Developer</Text>
                     </>
                     <>
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        Staticbox is a commenting system for static websites. It
-                        allows users to create fully custom comment forms and
-                        displays.
+                        Glitter is a Twitter theme customization tool that allows users to create their own Twitter theme
                       </Paragraph>
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        It leverages GraphQL and Apollo to load comments at
-                        build time. The result is a commenting system that
-                        doesn't add any page bloat!
+                        It uses local storage to keep track of themes that a user creates and has potential to function on other sites in the future as well.
                       </Paragraph>
                     </>
                   </Collapse>
 
                   <Button
                     external
-                    link="https://staticbox.io"
+                    link="https://get-glitter.netlify.app"
                     // variant="outlined"
                     color="primary"
                     customStyles={`
@@ -377,7 +373,7 @@ const App = ({}) => {
 
 
   box-shadow: 8px 8px 35px -20px #000;`}
-                image={<img src={SystemImage} />}
+                image={<img src={MindtrustImage} />}
               >
                 <div className="px-4 py-4 pb-y">
                   <Flex hAlign="start">
@@ -399,31 +395,28 @@ const App = ({}) => {
                         customStyles={`color: ${theme.color.gray.one};`}
                         className="m-none"
                       >
-                        SystemUI
+                        MindTrust
                       </Heading>
-                      <Text type="span">Founder + Developer</Text>
+                      <Text type="span">Front End Developer</Text>
                     </>
                     <>
                       {' '}
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        SystemUI is a React UI kit built for lightning-fast
-                        development.
+                        At MindTrust, I was the main developer responsible for developing the new website based off of the designs from the design team.
                       </Paragraph>
                       <Paragraph
                         customStyles={`color: ${theme.color.gray.two};`}
                       >
-                        I used styled-components to handle the styling logic,
-                        and have made it as customizable as possible. Future
-                        plans include releasing more UI kits to the public.
+                        I created a custom CSS framework and used SVG animations to make the site appealing to visitors. I also optimized the performance and accessibility.
                       </Paragraph>
                     </>
                   </Collapse>
 
                   <Button
                     external
-                    link="https://system-ui-kit.netlify.app"
+                    link="https://mindtrust.us"
                     // variant="outlined"
                     color="primary"
                     customStyles={`

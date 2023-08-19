@@ -39,12 +39,14 @@ const Info = ({
 };
 
 const ImageWrapper = styled.div`
-  max-height: 200px;
+  max-height: 190px;
+  height: 190px;
   overflow-y: hidden;
   overflow-x: visible;
   img {
     object-fit: cover;
     width: 100%;
+    height: 100%;
   }
 `;
 
