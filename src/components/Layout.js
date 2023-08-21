@@ -130,9 +130,9 @@ const Layout = ({ children }) => {
               <NavbarItem>
                 <Link to="/">Home</Link>
               </NavbarItem>
-              <NavbarItem>
+              {/* <NavbarItem>
                 <Link to="/blog">Blog</Link>
-              </NavbarItem>
+              </NavbarItem> */}
               <NavbarItem>
                 <Link to="/#projects">Projects</Link>
               </NavbarItem>
@@ -168,9 +168,9 @@ const Layout = ({ children }) => {
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="/">Home</Link>
             </MobileMenuItem>
-            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
+            {/* <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="/blog">Blog</Link>
-            </MobileMenuItem>
+            </MobileMenuItem> */}
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="/#projects">Projects</Link>
             </MobileMenuItem>
