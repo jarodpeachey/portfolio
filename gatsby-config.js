@@ -19,16 +19,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-cosmicjs',
-      options: {
-        bucketSlug: 'jarod-peachey', // Bucket Slug
-        objectTypes: ['posts', 'categories'], // List of the Object Types you want to be able to request from Gatsby.
-        apiAccess: {
-          read_key: 'y9MJMHRBeMY6UcosWHR0rDonh03K09ObvD6y7L3sFGTLpcDpZo',
-        },
-      },
-    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
