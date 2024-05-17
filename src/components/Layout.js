@@ -137,6 +137,8 @@ const Layout = ({ children }) => {
                 <Link to="/#projects">Projects</Link>
               </NavbarItem>
               <NavbarItem>
+              </NavbarItem>
+              <NavbarItem>
                 <Link to="/#values">Values</Link>
               </NavbarItem>
               {/* <NavbarItem submenu>
@@ -173,6 +175,9 @@ const Layout = ({ children }) => {
             </MobileMenuItem> */}
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="/#projects">Projects</Link>
+            </MobileMenuItem>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
+              <Link to="/#skills">My Skills</Link>
             </MobileMenuItem>
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
               <Link to="/#values">Values</Link>
