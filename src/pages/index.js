@@ -516,22 +516,22 @@ const App = ({}) => {
           <Heading className="mt-3" type="h2">
             My Skills
           </Heading>
-          <Row spacing={[24]} breakpoints={[576, 769, 960]}>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>HTML</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>CSS</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Javascript</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>React</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>PHP</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>MySQL</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Gatsby</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Tailwind CSS</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Next.js</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Wordpress</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Shopify</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>AJAX/JSON</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Stripe</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Netlify</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[4, 3, 2]}>Serverless</div>
+          <Row spacing={[24]} breakpoints={[400, 576, 769]}>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>HTML</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>CSS</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Javascript</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>React</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>PHP</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>MySQL</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Gatsby</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Tailwind CSS</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Next.js</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Wordpress</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Shopify</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>AJAX/JSON</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Stripe</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Netlify</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Serverless</div>
           </Row>
         </Container>
       </Section>
