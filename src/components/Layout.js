@@ -137,6 +137,7 @@ const Layout = ({ children }) => {
                 <Link to="/#projects">Projects</Link>
               </NavbarItem>
               <NavbarItem>
+                <Link to="/#skills">My Skills</Link>
               </NavbarItem>
               <NavbarItem>
                 <Link to="/#values">Values</Link>
