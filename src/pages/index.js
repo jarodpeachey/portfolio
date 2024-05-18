@@ -524,6 +524,7 @@ const App = ({}) => {
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Vue.js</div>
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Next.js</div>
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Gatsby</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>GraphQL</div>
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>PHP</div>
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>MySQL</div>
             <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Wordpress</div>
