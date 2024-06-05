@@ -110,7 +110,7 @@ const App = ({}) => {
           Hey 👋 I'm Jarod Peachey.
         </Heading>
         <Heading type="h4" display="title" customStyles={`color: ${theme.color.gray.six}; margin-bottom: 38px;`}>
-          Front end engineer specializing in React and custom CSS frameworks
+          Web developer and front-end engineer
         </Heading>
         <Container size="sm" align="left">
           <Paragraph>
