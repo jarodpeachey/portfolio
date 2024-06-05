@@ -71,7 +71,7 @@ const App = ({}) => {
       subject = `Message from ${name || "website"}`;
 
       if (typeof window !== "undefined") {
-        window.location.href = `mailto:jwpeachey107@aol.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:jarodpeachey@gmail.com?subject=${subject}&body=${body}`;
       }
     } else {
       if (message === "") {
@@ -97,7 +97,7 @@ const App = ({}) => {
     <Layout>
       <SEO
         title="Jarod Peachey - Front End Web Developer"
-        description="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML, CSS and the JAMstack."
+        description="Modern website solutions built to be blazing fast, extremely secure and simple to manage. Built using React, Gatsby, Netlify, HTML and CSS"
       />
       <Hero
         background={`linear-gradient(
@@ -114,8 +114,8 @@ const App = ({}) => {
         </Heading>
         <Container size="sm" align="left">
           <Paragraph>
-            I'm a software engineer with experience building full-stack applications, modern websites and custom REST APIs. I have a passion for making websites
-            that are as simple and easy to use as possible, without taking away from their functionality.
+            I'm a web developer and front-end engineer. I have a passion for making websites
+            that are as simple and easy to use as possible, while standing out and helping your company grow.
           </Paragraph>
           <Paragraph className="mb-6">
             I specialize in serverless architecture, headless websites and the JAMstack. Every application I build is secure, high-performing and easy to
@@ -198,7 +198,7 @@ const App = ({}) => {
                   </Collapse>
                   <Button
                     external
-                    link="https://wevote.us"
+                    link="https://galvastartrailers.com"
                     // variant="outlined"
                     color="primary"
                     customStyles={`
