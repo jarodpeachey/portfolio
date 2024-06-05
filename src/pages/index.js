@@ -110,7 +110,7 @@ const App = ({}) => {
           Hey 👋 I'm Jarod Peachey.
         </Heading>
         <Heading type="h4" display="title" customStyles={`color: ${theme.color.gray.six}; margin-bottom: 38px;`}>
-          Web developer and front-end engineer
+          I build high-performing websites
         </Heading>
         <Container size="sm" align="left">
           <Paragraph>
@@ -145,13 +145,13 @@ const App = ({}) => {
             }}
           />
           <Heading display="title" type="h6" color="secondary">
-            Projects
+            Recent Projects and Websites
           </Heading>
           <Heading className="mt-3" type="h2">
-            Recent Projects + Websites
+            My Work
           </Heading>
           <Paragraph customStyles="max-width: 769px;">
-            I've worked on all kinds of projects and sites, from large-scale SPA's, fully-custom APIs, and database integrations to small business websites,
+            My work ranges from large-scale SPA's, fully-custom APIs, and database integrations to small business websites,
             landing pages and blogs.
           </Paragraph>
           <Row spacing={[24]} breakpoints={[769, 1100]}>
@@ -511,7 +511,7 @@ const App = ({}) => {
             }}
           />
           <Heading display="title" type="h6" color="primary">
-            Skills
+            WHAT I DO
           </Heading>
           <Heading className="mt-3" type="h2">
             My Skills
@@ -554,16 +554,16 @@ const App = ({}) => {
             Values
           </Heading>
           <Heading className="mt-3" type="h2">
-            Highest Quality Standards
+            Why Choose Me?
           </Heading>
           <Paragraph customStyles="max-width: 769px;">
-            When I develop websites and applications, I don't cut corners. To paraphrase a popular quote: "A website is only as good as it's worst part".
+            When I develop websites and applications, I don't cut corners. Every line of code I write is high-quality and works best for your website.
           </Paragraph>
           <Row spacing={[24]} breakpoints={[769, 960]}>
             <div widths={[6, 4]}>
               <Info variant="filled" align="left" color="primary" icon={<FontAwesomeIcon icon="pencil-ruler" />}>
                 <Heading type="h3" customStyles={`color: ${theme.color.gray.one};`} className="mb-none mt-4">
-                  Modern Design
+                  Responsive Design
                 </Heading>
                 <Paragraph customStyles={`color: ${theme.color.gray.two};`}>
                   My number one priority with every website I build is design. I focus on crafting a clean, modern design that works on every screen size.
