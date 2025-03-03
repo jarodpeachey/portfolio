@@ -560,8 +560,9 @@ const App = ({}) => {
           <Paragraph customStyles="max-width: 769px;">
             If you've got any questions, or have a website you'd like built, let me know! I'll do my best to respond within 24 hours.
           </Paragraph>
-          <a href="mailto:jarodpeachey@gmail.com">jarodpeachey@gmail.com</a>
-          <a href="tel:7176822910">717-682-2910</a>
+          <a style={{color: 'white'}} href="mailto:jarodpeachey@gmail.com">jarodpeachey@gmail.com</a>
+          <br />
+          <a style={{color: 'white'}} href="tel:7176822910">717-682-2910</a>
           {/* {emailError && <Alert color="error">Please enter a valid email.</Alert>}
           {messageError && !emailError && <Alert color="error">Please type a message.</Alert>}
           <Row spacing={[12]} breakpoints={[769]}>
