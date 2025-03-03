@@ -114,12 +114,11 @@ const App = ({}) => {
         </Heading>
         <Container size="sm" align="left">
           <Paragraph>
-            I'm a web developer and front-end engineer. I have a passion for making websites
+            I'm a web developer and front-end engineer. I have a passion for designing and building websites
             that are as simple and easy to use as possible, while standing out and helping your company grow.
           </Paragraph>
           <Paragraph className="mb-6">
-            I specialize in serverless architecture, headless websites and the JAMstack. Every application I build is secure, high-performing and easy to
-            maintain.
+            I specialize in HTML, CSS and Javascript, bringing dynamic designs and simple UX to craft beautiful, high-converting websites
           </Paragraph>
           <Flex hAlign="start">
             <Button className="mr-2" color="primary" link="#contact">
@@ -155,62 +154,6 @@ const App = ({}) => {
             landing pages and blogs.
           </Paragraph>
           <Row spacing={[24]} breakpoints={[769, 1100]}>
-            <div widths={[6, 4]}>
-              <Info
-                color="primary"
-                align="left"
-                customStyles={`  background: ${props => props.theme.color.gray.eight};
-  background: #25293A;
-  border-radius: 6px;
-
-
-
-  box-shadow: 8px 8px 35px -20px #000;`}
-                image={<img src={galvastarImage} />}
-              >
-                <div className="px-4 py-4 pb-y">
-                  <Flex hAlign="start">
-                    <Chip color="primary" className="mr-2">
-                      React
-                    </Chip>
-                    <Chip color="primary" className="mr-2">
-                      HTML/CSS
-                    </Chip>
-                    <Chip color="primary">API</Chip>
-                  </Flex>
-                </div>
-                <div className="p-4 pt-none">
-                  <Collapse>
-                    <>
-                      <Heading type="h3" customStyles={`color: ${theme.color.gray.one};`} className="m-none">
-                        Galvastar Trailers
-                      </Heading>
-                      <Text type="span">Custom Client Website</Text>
-                    </>
-                    <>
-                      <Paragraph customStyles={`color: ${theme.color.gray.two};`}>
-                        I designed and built a custom ecommerce platform for a client looking for a simple way to sell truck parts and trailers.
-                      </Paragraph>
-                      <Paragraph customStyles={`color: ${theme.color.gray.two};`}>
-                        Built with Gatsby, React, the Stripe API and a custom CSS framwork/styling system
-                      </Paragraph>
-                    </>
-                  </Collapse>
-                  <Button
-                    external
-                    link="https://galvastartrailers.com"
-                    // variant="outlined"
-                    color="primary"
-                    customStyles={`
-                      // background: none !important;
-                      // padding-left: 0 !important;
-                    `}
-                  >
-                    Visit Site
-                  </Button>
-                </div>
-              </Info>
-            </div>
             <div widths={[6, 4]}>
               <Info
                 color="primary"
@@ -517,23 +460,23 @@ const App = ({}) => {
             My Skills
           </Heading>
           <Row spacing={[24]} breakpoints={[400, 576, 769]}>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>HTML</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>CSS</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Javascript</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>React</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Vue.js</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Next.js</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Gatsby</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>GraphQL</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>PHP</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>MySQL</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Wordpress</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Shopify</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Tailwind CSS</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>AJAX/JSON</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Stripe</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Netlify</div>
-            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center'}} widths={[6, 3, 2]}>Serverless</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>HTML</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>CSS</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Javascript</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>React</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Vue.js</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Next.js</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Gatsby</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>GraphQL</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>PHP</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>MySQL</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Wordpress</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Shopify</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Tailwind CSS</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>AJAX/JSON</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Stripe</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Netlify</div>
+            <div style={{padding: '6px 6px', borderRadius: 4, background: 'black', textAlign: 'center', fontSize: 20}} widths={[6, 3, 2]}>Serverless</div>
           </Row>
         </Container>
       </Section>
@@ -617,7 +560,9 @@ const App = ({}) => {
           <Paragraph customStyles="max-width: 769px;">
             If you've got any questions, or have a website you'd like built, let me know! I'll do my best to respond within 24 hours.
           </Paragraph>
-          {emailError && <Alert color="error">Please enter a valid email.</Alert>}
+          <a href="mailto:jarodpeachey@gmail.com">jarodpeachey@gmail.com</a>
+          <a href="tel:7176822910">717-682-2910</a>
+          {/* {emailError && <Alert color="error">Please enter a valid email.</Alert>}
           {messageError && !emailError && <Alert color="error">Please type a message.</Alert>}
           <Row spacing={[12]} breakpoints={[769]}>
             <div widths={[6]}>
@@ -634,7 +579,7 @@ const App = ({}) => {
                 Submit
               </Button>
             </div>
-          </Row>
+          </Row> */}
         </Container>
       </Section>
     </Layout>
