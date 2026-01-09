@@ -81,7 +81,7 @@ const Wrapper = styled.div`
         ? 'white'
         : props.color === 'transparent'
         ? props.theme.color.gray.one
-        : null};
+        : props.theme.color.gray.one};
   }
   .menu-item,
   .menu-item a {
@@ -91,8 +91,8 @@ const Wrapper = styled.div`
         : props.color === 'secondary'
         ? 'white'
         : props.color === 'transparent'
-        ? props.theme.color.gray.five
-        : null};
+        ? props.theme.color.gray.three
+        : props.theme.color.gray.three};
   }
   span {
     background: ${(props) =>
@@ -102,7 +102,7 @@ const Wrapper = styled.div`
         ? 'white'
         : props.color === 'transparent'
         ? props.theme.color.gray.one
-        : props.theme.color.gray.nine} !important;
+        : props.theme.color.gray.one} !important;
   }
 
   h1,
@@ -136,7 +136,7 @@ const Wrapper = styled.div`
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
       0 4px 16px -6px rgba(0, 0, 0, 0.5);
     background: ${(props) =>
-      props.color === 'transparent' ? props.theme.color.secondary : null};
+      props.color === 'transparent' ? 'white' : null};
     h1,
     h2,
     h3,
@@ -163,10 +163,10 @@ const Wrapper = styled.div`
     div,
     .menu-item,
     .menu-item a {
-      color: ${(props) => props.theme.color.gray.nine} !important;
+      color: ${(props) => props.theme.color.gray.one} !important;
     }
     span {
-      background: ${(props) => props.theme.color.gray.nine} !important;
+      background: ${(props) => props.theme.color.gray.one} !important;
     }
   }
 `;

@@ -68,10 +68,10 @@ const Wrapper = styled.div`
   transition-duration: 0.15s !important;
   width: 100%;
   svg {
-    color: ${(props) => props.theme.color.gray.nine} !important;
-    fill: ${(props) => props.theme.color.gray.nine} !important;
+    color: ${(props) => props.theme.color.gray.one} !important;
+    fill: ${(props) => props.theme.color.gray.one} !important;
   }
-  color: ${(props) => props.theme.color.gray.nine} !important;
+  color: ${(props) => props.theme.color.gray.one} !important;
   ${(props) =>
     props.submenu &&
     css`
@@ -83,8 +83,8 @@ const Wrapper = styled.div`
         background: ${'#435a8e10'};
       }
       svg {
-        color: ${props.theme.color.gray.nine} !important;
-        fill: ${props.theme.color.gray.nine} !important;
+        color: ${props.theme.color.gray.one} !important;
+        fill: ${props.theme.color.gray.one} !important;
       }
     `};
   a {
@@ -92,7 +92,7 @@ const Wrapper = styled.div`
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
-    color: ${(props) => props.theme.color.gray.nine} !important;
+    color: ${(props) => props.theme.color.gray.one} !important;
     cursor: pointer;
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#435a8e10' : 'transparent'};

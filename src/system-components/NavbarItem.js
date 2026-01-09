@@ -67,7 +67,7 @@ const Wrapper = styled.div`
     border-radius: ${(props) => props.theme.radius.two};
     transition-duration: 0.15s !important;
     :hover {
-      color: white !important;
+      color: ${(props) => props.theme.color.gray.one} !important;
     }
   }
 `;

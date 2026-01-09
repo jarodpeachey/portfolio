@@ -77,6 +77,9 @@ const GlobalStyles = createGlobalStyle`
     font-size: ${(props) => props.theme.fontSize.p}px;
     font-weight: 400;
   }
+  h1, h2, h3, h4, h5, h6 {
+    color: ${(props) => props.theme.color.gray.one};
+  }
   .dark p, .dark code, .dark span, .dark {
     color: ${(props) => props.theme.color.gray.seven};
   }
@@ -206,8 +209,7 @@ const Layout = ({ children }) => {
 };
 
 const Wrapper = styled.div`
-  color: ${(props) => props.theme.color.gray.five};
-  background ${(props) => props.theme.color.gray.nine};
+  color: ${(props) => props.theme.color.gray.three};
 `;
 
 export default Layout;

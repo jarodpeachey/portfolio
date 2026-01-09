@@ -84,27 +84,27 @@ const StyledInfo = styled.div`
     props.variant === 'filled' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary
+        ? `${props.theme.color.primary}20`
         : props.color === 'secondary'
-        ? props.theme.color.secondary
+        ? `${props.theme.color.secondary}20`
         : props.color === 'success'
-        ? props.theme.color.success
+        ? `${props.theme.color.success}20`
         : props.color === 'error'
-        ? props.theme.color.error
+        ? `${props.theme.color.error}20`
         : 'white'};
     `};
   ${(props) =>
     props.variant === 'light' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary
+        ? `${props.theme.color.primary}10`
         : props.color === 'secondary'
-        ? props.theme.color.secondary
+        ? `${props.theme.color.secondary}10`
         : props.color === 'success'
-        ? props.theme.color.success
+        ? `${props.theme.color.success}10`
         : props.color === 'error'
-        ? props.theme.color.error
-        : 'white'}15;
+        ? `${props.theme.color.error}10`
+        : 'white'};
 
       p {
         color: ${props.color ? '#000000bb' : null};
