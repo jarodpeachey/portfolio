@@ -1,103 +1,84 @@
-// // const { isFuture } = require('date-fns');
-// // const { format } = require('date-fns');
-// const path = require('path');
-// const fs = require('fs');
-// const request = require('request');
-// const createPaginatedPages = require('gatsby-paginate');
-// const { generateImage } = require('./src/utils/generateImage');
+const { node } = require("prop-types");
+const path = require("path");
+const fs = require("fs");
 
-// generateImage({
-//   title: 'Jarod Peachey - Web Developer',
-//   imagePath: 'home',
-//   url: null,
-// });
+exports.createPages = async ({ actions, reporter }) => {
+    const { createPage } = actions;
 
-// generateImage({
-//   title: 'Blog - Jarod Peachey',
-//   imagePath: 'blog',
-//   url: null,
-// });
+    // --- Sitemap generation (fallback/manual) ---
+    // We generate a simple sitemap.xml in public/ using the posts we just read.
+    try {
+        const siteConfig = require("./gatsby-config.js");
+        const siteUrl = (siteConfig && siteConfig.siteMetadata && siteConfig.siteMetadata.siteUrl) || "";
+        if (siteUrl) {
+            const urls = [];
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions;
+            // Home
+            urls.push({ url: `${siteUrl}/`, priority: 1.0, changefreq: "daily" });
 
-//   const result = await graphql(`
-//     {
-//       posts: allCosmicjsPosts(filter: { status: { eq: "published" } }) {
-//         edges {
-//           node {
-//             metadata {
-//               description
-//               categories {
-//                 title
-//                 slug
-//               }
-//               image {
-//                 url
-//               }
-//             }
-//             title
-//             published_at(formatString: "DD/MM/YYYY")
-//             content
-//             status
-//             slug
-//           }
-//         }
-//       }
-//       categories: allCosmicjsCategories {
-//         edges {
-//           node {
-//             title
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `);
+            // Blog listing
+            urls.push({ url: `${siteUrl}/blog`, priority: 0.8, changefreq: "weekly" });
 
-//   if (result.errors) throw result.errors;
+            // Posts (use published_at for lastmod if available)
+            posts.forEach(p => {
+                const loc = `${siteUrl}/blog/${p.slug}`;
+                const lastmod = p.published_at || null;
+                urls.push({ url: loc, priority: 0.7, changefreq: "monthly", lastmod });
+            });
 
-//   createPaginatedPages({
-//     edges: result.data.posts.edges,
-//     createPage,
-//     pageTemplate: 'src/templates/blog.js',
-//     pageLength: 6,
-//     pathPrefix: 'blog',
-//     buildPath: (index, pathPrefix) =>
-//       index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
-//   });
+            // Build XML
+            const xmlItems = urls
+                .map(u => {
+                    const parts = [`<loc>${u.url}</loc>`];
+                    if (u.lastmod) parts.push(`<lastmod>${u.lastmod}</lastmod>`);
+                    if (u.changefreq) parts.push(`<changefreq>${u.changefreq}</changefreq>`);
+                    if (u.priority !== undefined) parts.push(`<priority>${u.priority}</priority>`);
+                    return `<url>${parts.join("")}</url>`;
+                })
+                .join("\n");
 
-//   result.data.posts.edges.forEach(({ node }, index) => {
-//     const seoImage = generateImage({
-//       title: node.title,
-//       description: node.metadata.description,
-//       imagePath: node.title.toLowerCase().replace(/ /g, '-').replace('%', '-percent'),
-//       url: node.metadata.image.url,
-//     });
+            const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n` + `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${xmlItems}\n</urlset>`;
 
-//     createPage({
-//       path: `/blog/${node.slug}`,
-//       component: path.resolve('./src/templates/post.js'),
-//       context: {
-//         slug: node.slug,
-//         seoImage,
-//       },
-//     });
-//   });
+            const outDir = path.resolve(__dirname, "public");
+            if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.join(outDir, "sitemap.xml"), sitemap, "utf8");
+            reporter.info(`Wrote sitemap.xml with ${urls.length} URLs to ${outDir}`);
+        } else {
+            reporter.warn("siteUrl not configured in gatsby-config.js; skipping sitemap generation");
+        }
+    } catch (err) {
+        reporter.warn(`Error generating sitemap.xml: ${err}`);
+    }
+};
 
-//   // result.data.categories.edges.forEach(({ node }, index) => {
-//   //   const path = `/category/${node.slug}`;
+// Keep console.* in production build by disabling Terser's drop_console
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+    // Only adjust during the production JS build
+    if (stage === "build-javascript" || stage === "develop") {
+        const TerserPlugin = require("terser-webpack-plugin");
+        const webpack = require("webpack");
 
-//   //   createPage({
-//   //     path,
-//   //     component: require.resolve('./src/templates/category.js'),
-//   //     context: {
-//   //       category: node.slug,
-//   //     },
-//   //   });
-//   // });
-// };
-
-// // exports.createPages = async ({ graphql, actions }) => {
-// //   await createBlogPostPages(graphql, actions);
-// // };
+        actions.setWebpackConfig({
+            optimization: {
+                minimizer: [
+                    new TerserPlugin({
+                        terserOptions: {
+                            compress: {
+                                // Ensure console statements are not dropped
+                                drop_console: false,
+                            },
+                        },
+                        extractComments: false,
+                    }),
+                ],
+            },
+            plugins: [
+                new webpack.DefinePlugin({
+                    // expose as string 'true' so checks like process.env.GATSBY_SHOW_LOGS === 'true' pass
+                    "process.env.gatsbyshowlogs": JSON.stringify("true"),
+                    "process.env.GATSBY_SHOW_LOGS": JSON.stringify("true"),
+                }),
+            ],
+        });
+    }
+};
